@@ -3,8 +3,9 @@ package ui;
 import java.awt.*;
 
 public interface AsciiUI extends UI {
-    void setFontNameAndRerender(String fontName);
-    void setFontStyleAndRerender(int fontStyle);
-    void setFontSizeAndRerender(int fontSize);
-    void setFontAndRerender(Font font);
+    void setFontName(String fontName);
+    void setFontStyle(int fontStyle);
+    void setFontSize(int fontSize);
+    void setFont(Font font);
+    void setColorOfSymbol(Color color, int x, int y);
 }

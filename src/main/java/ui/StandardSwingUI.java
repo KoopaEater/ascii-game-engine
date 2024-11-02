@@ -26,6 +26,10 @@ public class StandardSwingUI implements SwingUI {
     @Override
     public void setContent(Container content) {
         mainFrame.setContentPane(content);
+    }
+
+    @Override
+    public void updateSizeToFit() {
         mainFrame.pack();
     }
 

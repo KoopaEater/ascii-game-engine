@@ -11,25 +11,26 @@ public class StandardAsciiUI implements AsciiUI {
     private int fontStyle;
     private int fontSize;
     private int xSymbols, ySymbols;
+    private JPanel contentPane;
+    private JLabel[][] symbols;
 
     public StandardAsciiUI(String title, int xSymbols, int ySymbols) {
 
         this.xSymbols = xSymbols;
         this.ySymbols = ySymbols;
 
+        symbols = new JLabel[ySymbols][xSymbols];
+
         ui = new StandardSwingUI(title);
         ui.setResizable(false);
-        setFontAndRerender(new Font("Monospaced", Font.PLAIN, 14));
-        renderUI();
+        fillScreen(xSymbols, ySymbols);
+        setFont(new Font("Monospaced", Font.PLAIN, 14));
+        ui.setContent(contentPane);
+        ui.updateSizeToFit();
     }
 
-    private void renderUI() {
-        Container content = getFilledScreen(xSymbols, ySymbols);
-        ui.setContent(content);
-    }
-
-    private Container getFilledScreen(int xSymbols, int ySymbols) {
-        JPanel contentPane = new JPanel();
+    private void fillScreen(int xSymbols, int ySymbols) {
+        contentPane = new JPanel();
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
 
         for (int y = 0; y < ySymbols; y++) {
@@ -38,16 +39,21 @@ public class StandardAsciiUI implements AsciiUI {
 
             for (int x = 0; x < xSymbols; x++) {
                 JLabel symbol = new JLabel("@");
-                Font font = new Font(fontName, fontStyle, fontSize);
-                symbol.setFont(font);
                 line.add(symbol);
+                symbols[y][x] = symbol;
             }
             contentPane.add(line);
         }
+    }
 
-        contentPane.doLayout();
-
-        return contentPane;
+    private void redrawFont() {
+        for (int y = 0; y < ySymbols; y++) {
+            for (int x = 0; x < xSymbols; x++) {
+                JLabel symbol = symbols[y][x];
+                symbol.setFont(font);
+            }
+        }
+        ui.updateSizeToFit();
     }
 
     @Override
@@ -61,33 +67,42 @@ public class StandardAsciiUI implements AsciiUI {
     }
 
     @Override
-    public void setFontNameAndRerender(String fontName) {
+    public void setFontName(String fontName) {
         this.fontName = fontName;
         font = new Font(fontName, fontStyle, fontSize);
-        renderUI();
+        redrawFont();
     }
 
     @Override
-    public void setFontStyleAndRerender(int fontStyle) {
+    public void setFontStyle(int fontStyle) {
         this.fontStyle = fontStyle;
         font = new Font(fontName, fontStyle, fontSize);
-        renderUI();
+        redrawFont();
     }
 
     @Override
-    public void setFontSizeAndRerender(int fontSize) {
+    public void setFontSize(int fontSize) {
         this.fontSize = fontSize;
         font = new Font(fontName, fontStyle, fontSize);
-        renderUI();
+        redrawFont();
     }
 
     @Override
-    public void setFontAndRerender(Font font) {
+    public void setFont(Font font) {
         fontName = font.getFontName();
         fontStyle = font.getStyle();
         fontSize = font.getSize();
         this.font = font;
-        renderUI();
+        redrawFont();
+    }
+
+    @Override
+    public void setColorOfSymbol(Color color, int x, int y) {
+        JLabel symbol = symbols[y][x];
+        symbol.setForeground(color);
+        symbol.validate();
+        symbol.repaint();
+        System.out.println("COLOR" + color);
     }
 
 }

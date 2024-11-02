@@ -13,6 +13,5 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
     @Override
     public void fixedTick() {
-
     }
 }

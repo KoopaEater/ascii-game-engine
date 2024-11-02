@@ -16,7 +16,6 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     public AbstractAsciiGame() {
 
         ui = new StandardAsciiUI("AsciiUI", 20, 10);
-        ui.setFontSizeAndRerender(18);
         trySetMonospacedFont();
         ui.show();
 
@@ -33,10 +32,10 @@ public abstract class AbstractAsciiGame implements AsciiGame {
             if (resourceStream == null) {
                 throw new IOException("Font file not found");
             }
-            Font jetBrainsMonoFont = Font.createFont(Font.TRUETYPE_FONT, resourceStream).deriveFont(20f);
+            Font jetBrainsMonoFont = Font.createFont(Font.TRUETYPE_FONT, resourceStream).deriveFont(50f);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(jetBrainsMonoFont);
-            ui.setFontAndRerender(jetBrainsMonoFont);
+            ui.setFont(jetBrainsMonoFont);
         } catch (FontFormatException e) {
             System.out.println("Could not format font. Uses default font.");
         } catch (IOException e) {
@@ -47,6 +46,13 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     public void stopGameLoop() {
         gameLoop.stop();
     }
+
+    @Override
+    public void setColorOfSymbol(Color color, int x, int y) {
+        System.out.println("Abstract");
+        ui.setColorOfSymbol(color, x, y);
+    }
+
     public abstract void tick(long deltaTime);
     public abstract void fixedTick();
 }
