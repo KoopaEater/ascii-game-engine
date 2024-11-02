@@ -1,6 +1,6 @@
 package engine;
 
-public interface ContinuousTick {
+public interface Tick {
 
     void tick(long deltaTime);
 

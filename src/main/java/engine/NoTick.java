@@ -1,6 +1,6 @@
 package engine;
 
-public class NoContinuousTick implements ContinuousTick {
+public class NoTick implements Tick {
     @Override
     public void tick(long deltaTime) {
 

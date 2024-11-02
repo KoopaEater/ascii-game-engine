@@ -1,57 +1,59 @@
 package engine;
 
-import game.StandardGame;
-
 public class StandardGameLoop implements GameLoop {
-    private ContinuousTick continuousTick;
+    private Tick tick;
     private FixedTick fixedTick;
     private boolean running;
     private long lastTickTime;
-    private double millisPerFixedTick;
-    private double elapsedFixedTime;
+    private long lastFixedTickTime;
+    private long millisPerFixedTick;
 
     public StandardGameLoop(int fixedTickRate) {
-        elapsedFixedTime = 0;
-        millisPerFixedTick = 1000.0 / fixedTickRate;
+        tick = new NoTick();
+        fixedTick = new NoFixedTick();
+        millisPerFixedTick = Math.round(1000.0 / fixedTickRate);
     }
 
-    private void run() {
-        long elapsedTime = System.currentTimeMillis() - lastTickTime;
+    private void runLoop() {
         lastTickTime = System.currentTimeMillis();
+        lastFixedTickTime = System.currentTimeMillis();
+        while (running) {
+            long elapsedTime = System.currentTimeMillis() - lastTickTime;
+            lastTickTime = System.currentTimeMillis();
+            tick.tick(elapsedTime);
 
-        elapsedFixedTime += elapsedTime;
-        while (elapsedFixedTime > millisPerFixedTick) {
-            fixedTick.tick();
-            elapsedFixedTime -= elapsedFixedTime;
-        }
-
-        continuousTick.tick(elapsedTime);
-
-        if (running) {
-            run();
+            long elapsedFixedTime = System.currentTimeMillis() - lastFixedTickTime;
+            if (elapsedFixedTime >= millisPerFixedTick) {
+                lastFixedTickTime = System.currentTimeMillis();
+                long ticks = elapsedFixedTime / millisPerFixedTick;
+                for (int i = 0; i < ticks; i++) {
+                    if (running) {
+                        fixedTick.tick();
+                    }
+                }
+            }
         }
     }
 
 
     @Override
-    public void setContinuousTick(ContinuousTick tick) {
-        continuousTick = tick;
+    public void tick(Tick tick) {
+        this.tick = tick;
     }
 
     @Override
-    public void setFixedTick(FixedTick tick) {
+    public void fixedTick(FixedTick tick) {
         fixedTick = tick;
     }
 
     @Override
     public void start() {
         running = true;
-        lastTickTime = System.currentTimeMillis();
-        run();
+        runLoop();
     }
 
     @Override
-    public void pause() {
+    public void stop() {
         running = false;
     }
 }
