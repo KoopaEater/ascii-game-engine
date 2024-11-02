@@ -1,6 +1,7 @@
 package engine;
 
 public class StandardGameLoop implements GameLoop {
+    private SetupTick setupTick;
     private Tick tick;
     private FixedTick fixedTick;
     private boolean running;
@@ -13,6 +14,7 @@ public class StandardGameLoop implements GameLoop {
     }
 
     private void runLoop() {
+        setupTick.tick();
         long lastTickTime = System.nanoTime();
         long lastFixedTickTime = System.nanoTime();
         while (running) {
@@ -33,6 +35,11 @@ public class StandardGameLoop implements GameLoop {
         }
     }
 
+
+    @Override
+    public void setupTick(SetupTick tick) {
+        setupTick = tick;
+    }
 
     @Override
     public void tick(Tick tick) {
