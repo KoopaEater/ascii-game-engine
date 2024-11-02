@@ -1,8 +1,8 @@
 package game;
 
-public class StandardGame extends AbstractGame {
+public class StandardAsciiGame extends AbstractAsciiGame {
 
-    public StandardGame() {
+    public StandardAsciiGame() {
         super();
     }
 
