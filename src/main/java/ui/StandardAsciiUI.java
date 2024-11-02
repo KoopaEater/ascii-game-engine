@@ -33,9 +33,15 @@ public class StandardAsciiUI implements AsciiUI {
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.Y_AXIS));
 
         for (int y = 0; y < ySymbols; y++) {
-            JLabel line = new JLabel("@".repeat(xSymbols));
-            Font font = new Font(fontName, fontStyle, fontSize);
-            line.setFont(font);
+            JPanel line = new JPanel();
+            line.setLayout(new BoxLayout(line, BoxLayout.X_AXIS));
+
+            for (int x = 0; x < xSymbols; x++) {
+                JLabel symbol = new JLabel("@");
+                Font font = new Font(fontName, fontStyle, fontSize);
+                symbol.setFont(font);
+                line.add(symbol);
+            }
             contentPane.add(line);
         }
 
