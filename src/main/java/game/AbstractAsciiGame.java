@@ -22,6 +22,7 @@ public abstract class AbstractAsciiGame implements AsciiGame {
         gameLoop = new StandardGameLoop(60);
         gameLoop.tick(this::tick);
         gameLoop.fixedTick(this::fixedTick);
+        gameLoop.setupTick(this::setup);
         gameLoop.start();
     }
 
@@ -49,10 +50,10 @@ public abstract class AbstractAsciiGame implements AsciiGame {
 
     @Override
     public void setColorOfSymbol(Color color, int x, int y) {
-        System.out.println("Abstract");
         ui.setColorOfSymbol(color, x, y);
     }
 
+    public abstract void setup();
     public abstract void tick(long deltaTime);
     public abstract void fixedTick();
 }

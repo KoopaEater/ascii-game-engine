@@ -100,9 +100,6 @@ public class StandardAsciiUI implements AsciiUI {
     public void setColorOfSymbol(Color color, int x, int y) {
         JLabel symbol = symbols[y][x];
         symbol.setForeground(color);
-        symbol.validate();
-        symbol.repaint();
-        System.out.println("COLOR" + color);
     }
 
 }
