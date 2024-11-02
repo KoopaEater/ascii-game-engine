@@ -13,9 +13,9 @@ import java.io.InputStream;
 public abstract class AbstractAsciiGame implements AsciiGame {
     private GameLoop gameLoop;
     private AsciiUI ui;
-    public AbstractAsciiGame() {
+    public AbstractAsciiGame(String title, int xSymbols, int ySymbols) {
 
-        ui = new StandardAsciiUI("AsciiUI", 20, 10);
+        ui = new StandardAsciiUI(title, xSymbols, ySymbols);
         trySetMonospacedFont();
         ui.show();
 
@@ -51,6 +51,14 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     @Override
     public void setColorOfSymbol(Color color, int x, int y) {
         ui.setColorOfSymbol(color, x, y);
+    }
+    @Override
+    public void setBackgroundColor(Color color) {
+        ui.setBackgroundColor(color);
+    }
+    @Override
+    public void setSymbol(char symbol, int x, int y) {
+        ui.setSymbol(symbol, x, y);
     }
 
     public abstract void setup();

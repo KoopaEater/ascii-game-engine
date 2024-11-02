@@ -12,7 +12,8 @@ public class StandardSwingUI implements SwingUI {
     public StandardSwingUI(String title) {
         mainFrame = new JFrame(title);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        tryUseFlatLaF();
+//        tryUseFlatLaF();
+        tryUseDefaultLaF();
     }
 
     private void tryUseFlatLaF() {
@@ -20,6 +21,14 @@ public class StandardSwingUI implements SwingUI {
             UIManager.setLookAndFeel(new FlatLightLaf());
         } catch (Exception ex) {
             System.err.println("Failed to initialize LaF");
+        }
+    }
+
+    private void tryUseDefaultLaF() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

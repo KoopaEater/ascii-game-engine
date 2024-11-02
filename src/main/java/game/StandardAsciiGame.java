@@ -5,12 +5,16 @@ import java.awt.*;
 public class StandardAsciiGame extends AbstractAsciiGame {
 
     public StandardAsciiGame() {
-        super();
+        super("AsciiGame", 25, 13);
     }
 
     @Override
     public void setup() {
-        setColorOfSymbol(Color.RED, 5, 3);
+
+        setBackgroundColor(Color.BLACK);
+        setSymbol('O', 12, 6);
+        setColorOfSymbol(Color.RED, 12, 6);
+
     }
 
     @Override

@@ -1,6 +1,9 @@
 package ui;
 
+import ui.utility.SymbolFunction;
+
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class StandardAsciiUI implements AsciiUI {
@@ -35,10 +38,11 @@ public class StandardAsciiUI implements AsciiUI {
 
         for (int y = 0; y < ySymbols; y++) {
             JPanel line = new JPanel();
+            line.setOpaque(false);
             line.setLayout(new BoxLayout(line, BoxLayout.X_AXIS));
 
             for (int x = 0; x < xSymbols; x++) {
-                JLabel symbol = new JLabel("@");
+                JLabel symbol = new JLabel(" ");
                 line.add(symbol);
                 symbols[y][x] = symbol;
             }
@@ -47,13 +51,17 @@ public class StandardAsciiUI implements AsciiUI {
     }
 
     private void redrawFont() {
+        applyToAllSymbols(symbol -> symbol.setFont(font));
+        ui.updateSizeToFit();
+    }
+
+    private void applyToAllSymbols(SymbolFunction fun) {
         for (int y = 0; y < ySymbols; y++) {
             for (int x = 0; x < xSymbols; x++) {
                 JLabel symbol = symbols[y][x];
-                symbol.setFont(font);
+                fun.apply(symbol);
             }
         }
-        ui.updateSizeToFit();
     }
 
     @Override
@@ -100,6 +108,17 @@ public class StandardAsciiUI implements AsciiUI {
     public void setColorOfSymbol(Color color, int x, int y) {
         JLabel symbol = symbols[y][x];
         symbol.setForeground(color);
+    }
+
+    @Override
+    public void setBackgroundColor(Color color) {
+        contentPane.setBackground(color);
+    }
+
+    @Override
+    public void setSymbol(char symbol, int x, int y) {
+        JLabel label = symbols[y][x];
+        label.setText(String.valueOf(symbol));
     }
 
 }
