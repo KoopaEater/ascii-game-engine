@@ -7,7 +7,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
     private int y;
 
     public StandardAsciiGame() {
-        super("AsciiGame", 25, 13, 1);
+        super("AsciiGame", 25, 13, 2);
     }
 
     @Override
@@ -18,6 +18,8 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         setBackgroundColor(Color.BLACK);
         setSymbol('O', 12, y);
         setColorOfSymbol(Color.RED, 12, y);
+
+        setBackgroundOfSymbol(Color.WHITE, 12, 0);
 
     }
 
@@ -37,7 +39,5 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
         setSymbol('O', 12, y);
         setColorOfSymbol(Color.RED, 12, y);
-
-
     }
 }

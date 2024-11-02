@@ -8,6 +8,7 @@ public interface AsciiUI extends UI {
     void setFontSize(int fontSize);
     void setFont(Font font);
     void setColorOfSymbol(Color color, int x, int y);
+    void setBackgroundOfSymbol(Color color, int x, int y);
     void setBackgroundColor(Color color);
     void setSymbol(char symbol, int x, int y);
 }

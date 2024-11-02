@@ -111,6 +111,11 @@ public class StandardAsciiUI implements AsciiUI {
     }
 
     @Override
+    public void setBackgroundOfSymbol(Color color, int x, int y) {
+        symbols[y][x].setBackground(color);
+    }
+
+    @Override
     public void setBackgroundColor(Color color) {
         contentPane.setBackground(color);
     }

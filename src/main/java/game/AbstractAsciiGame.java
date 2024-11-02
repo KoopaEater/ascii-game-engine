@@ -53,6 +53,10 @@ public abstract class AbstractAsciiGame implements AsciiGame {
         ui.setColorOfSymbol(color, x, y);
     }
     @Override
+    public void setBackgroundOfSymbol(Color color, int x, int y) {
+        ui.setBackgroundOfSymbol(color, x, y);
+    }
+    @Override
     public void setBackgroundColor(Color color) {
         ui.setBackgroundColor(color);
     }
