@@ -1,29 +1,18 @@
 package game;
 
-import engine.GameLoop;
-import engine.StandardGameLoop;
+public class StandardGame extends AbstractGame {
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-public class StandardGame implements Game {
     public StandardGame() {
-        AtomicInteger counter = new AtomicInteger(0);
-        GameLoop gameLoop = new StandardGameLoop(2);
+        super();
+    }
 
-        gameLoop.tick(dt -> {
-            try {
-                Thread.sleep(1500);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        });
+    @Override
+    public void tick(long deltaTime) {
 
-        gameLoop.fixedTick(() -> {
-            System.out.println(counter);
-            if (counter.incrementAndGet() > 10) {
-                gameLoop.stop();
-            }
-        });
-        gameLoop.start();
+    }
+
+    @Override
+    public void fixedTick() {
+
     }
 }
