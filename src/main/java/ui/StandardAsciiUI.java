@@ -1,9 +1,10 @@
 package ui;
 
+import ui.utility.StandardSymbol;
+import ui.utility.Symbol;
 import ui.utility.SymbolFunction;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class StandardAsciiUI implements AsciiUI {
@@ -15,14 +16,14 @@ public class StandardAsciiUI implements AsciiUI {
     private int fontSize;
     private int xSymbols, ySymbols;
     private JPanel contentPane;
-    private JLabel[][] symbols;
+    private Symbol[][] symbols;
 
     public StandardAsciiUI(String title, int xSymbols, int ySymbols) {
 
         this.xSymbols = xSymbols;
         this.ySymbols = ySymbols;
 
-        symbols = new JLabel[ySymbols][xSymbols];
+        symbols = new Symbol[ySymbols][xSymbols];
 
         ui = new StandardSwingUI(title);
         ui.setResizable(false);
@@ -42,9 +43,9 @@ public class StandardAsciiUI implements AsciiUI {
             line.setLayout(new BoxLayout(line, BoxLayout.X_AXIS));
 
             for (int x = 0; x < xSymbols; x++) {
-                JLabel symbol = new JLabel(" ");
-                line.add(symbol);
-                symbols[y][x] = symbol;
+                JLabel symbolLabel = new JLabel(" ");
+                line.add(symbolLabel);
+                symbols[y][x] = new StandardSymbol(symbolLabel);
             }
             contentPane.add(line);
         }
@@ -58,7 +59,7 @@ public class StandardAsciiUI implements AsciiUI {
     private void applyToAllSymbols(SymbolFunction fun) {
         for (int y = 0; y < ySymbols; y++) {
             for (int x = 0; x < xSymbols; x++) {
-                JLabel symbol = symbols[y][x];
+                Symbol symbol = symbols[y][x];
                 fun.apply(symbol);
             }
         }
@@ -106,8 +107,7 @@ public class StandardAsciiUI implements AsciiUI {
 
     @Override
     public void setColorOfSymbol(Color color, int x, int y) {
-        JLabel symbol = symbols[y][x];
-        symbol.setForeground(color);
+        symbols[y][x].setColor(color);
     }
 
     @Override
@@ -117,8 +117,7 @@ public class StandardAsciiUI implements AsciiUI {
 
     @Override
     public void setSymbol(char symbol, int x, int y) {
-        JLabel label = symbols[y][x];
-        label.setText(String.valueOf(symbol));
+        symbols[y][x].setSymbol(symbol);
     }
 
 }
