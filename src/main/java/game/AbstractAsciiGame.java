@@ -13,13 +13,13 @@ import java.io.InputStream;
 public abstract class AbstractAsciiGame implements AsciiGame {
     private GameLoop gameLoop;
     private AsciiUI ui;
-    public AbstractAsciiGame(String title, int xSymbols, int ySymbols) {
+    public AbstractAsciiGame(String title, int xSymbols, int ySymbols, int frameRate) {
 
         ui = new StandardAsciiUI(title, xSymbols, ySymbols);
         trySetMonospacedFont();
         ui.show();
 
-        gameLoop = new StandardGameLoop(60);
+        gameLoop = new StandardGameLoop(frameRate);
         gameLoop.tick(this::tick);
         gameLoop.fixedTick(this::fixedTick);
         gameLoop.setupTick(this::setup);
