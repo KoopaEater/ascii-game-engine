@@ -47,6 +47,9 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     public void stopGameLoop() {
         gameLoop.stop();
     }
+    public void startGameLoop() {
+        gameLoop.start();
+    }
 
     @Override
     public void setColorOfSymbol(Color color, int x, int y) {
