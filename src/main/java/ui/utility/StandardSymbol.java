@@ -31,4 +31,19 @@ public class StandardSymbol implements Symbol {
     public void setFont(Font font) {
         label.setFont(font);
     }
+
+    @Override
+    public Color getColor() {
+        return label.getForeground();
+    }
+
+    @Override
+    public Color getBackground() {
+        return label.getBackground();
+    }
+
+    @Override
+    public char getSymbol() {
+        return label.getText().charAt(0);
+    }
 }

@@ -7,4 +7,7 @@ public interface AsciiGame extends Game {
     void setBackgroundOfSymbol(Color color, int x, int y);
     void setBackgroundColor(Color color);
     void setSymbol(char symbol, int x, int y);
+    Color getColorOfSymbol(int x, int y);
+    Color getBackgroundOfSymbol(int x, int y);
+    char getSymbol(int x, int y);
 }

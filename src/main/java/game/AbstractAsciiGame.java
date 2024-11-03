@@ -67,6 +67,18 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     public void setSymbol(char symbol, int x, int y) {
         ui.setSymbol(symbol, x, y);
     }
+    @Override
+    public Color getColorOfSymbol(int x, int y) {
+        return ui.getColorOfSymbol(x, y);
+    }
+    @Override
+    public Color getBackgroundOfSymbol(int x, int y) {
+        return ui.getColorOfSymbol(x, y);
+    }
+    @Override
+    public char getSymbol(int x, int y) {
+        return ui.getSymbol(x, y);
+    }
 
     public abstract void setup();
     public abstract void tick(long deltaTime);

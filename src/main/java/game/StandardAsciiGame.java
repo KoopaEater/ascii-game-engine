@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class StandardAsciiGame extends AbstractAsciiGame {
 
-    private int y;
+    AsciiActor player;
 
     public StandardAsciiGame() {
         super("AsciiGame", 25, 13, 2);
@@ -13,13 +13,17 @@ public class StandardAsciiGame extends AbstractAsciiGame {
     @Override
     public void setup() {
 
-        y = 12;
-
         setBackgroundColor(Color.BLACK);
-        setSymbol('O', 12, y);
-        setColorOfSymbol(Color.RED, 12, y);
+
+        player = new SymbolAsciiActor(this);
+        player.setSymbol('O');
+        player.setColor(Color.RED);
+        player.moveTo(12, 12);
+        player.show();
 
         setBackgroundOfSymbol(Color.WHITE, 12, 0);
+        setSymbol('X', 12, 6);
+        setColorOfSymbol(Color.GREEN, 12, 6);
 
     }
 
@@ -30,14 +34,8 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
     @Override
     public void fixedTick() {
-        setSymbol(' ', 12, y);
-        setColorOfSymbol(Color.RED, 12, y);
-
-        if (y>0) {
-            y--;
+        if (player.getY() > 0) {
+            player.move(0, -1);
         }
-
-        setSymbol('O', 12, y);
-        setColorOfSymbol(Color.RED, 12, y);
     }
 }

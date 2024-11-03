@@ -7,4 +7,7 @@ public interface Symbol {
     void setColor(Color color);
     void setBackground(Color color);
     void setFont(Font font);
+    Color getColor();
+    Color getBackground();
+    char getSymbol();
 }

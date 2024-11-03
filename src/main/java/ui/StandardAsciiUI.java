@@ -125,4 +125,19 @@ public class StandardAsciiUI implements AsciiUI {
         symbols[y][x].setSymbol(symbol);
     }
 
+    @Override
+    public Color getColorOfSymbol(int x, int y) {
+        return symbols[y][x].getColor();
+    }
+
+    @Override
+    public Color getBackgroundOfSymbol(int x, int y) {
+        return symbols[y][x].getBackground();
+    }
+
+    @Override
+    public char getSymbol(int x, int y) {
+        return symbols[y][x].getSymbol();
+    }
+
 }
