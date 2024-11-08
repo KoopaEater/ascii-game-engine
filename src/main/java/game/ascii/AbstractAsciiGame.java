@@ -1,23 +1,29 @@
-package game;
+package game.ascii;
 
 import engine.GameLoop;
 import engine.StandardGameLoop;
+import game.ascii.actor.AsciiActor;
+import game.ascii.actor.AsciiActorMap;
+import game.ascii.actor.StandardAsciiActorMap;
 import ui.AsciiUI;
 import ui.StandardAsciiUI;
 
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
 public abstract class AbstractAsciiGame implements AsciiGame {
     private GameLoop gameLoop;
     private AsciiUI ui;
+    private AsciiActorMap actorMap;
+    private int xSymbols, ySymbols;
     public AbstractAsciiGame(String title, int xSymbols, int ySymbols, int frameRate) {
 
         ui = new StandardAsciiUI(title, xSymbols, ySymbols);
         trySetMonospacedFont();
         ui.show();
+
+        actorMap = new StandardAsciiActorMap(this);
 
         gameLoop = new StandardGameLoop(frameRate);
         gameLoop.tick(this::tick);
@@ -78,6 +84,14 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     @Override
     public char getSymbol(int x, int y) {
         return ui.getSymbol(x, y);
+    }
+    @Override
+    public int getXSymbols() {
+        return xSymbols;
+    }
+    @Override
+    public int getYSymbols() {
+        return ySymbols;
     }
 
     public abstract void setup();

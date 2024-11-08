@@ -1,4 +1,4 @@
-package game;
+package game.ascii.actor;
 
 import java.awt.*;
 
@@ -11,4 +11,5 @@ public interface AsciiActor {
     int getY();
     void show();
     void hide();
+    void toggleVisibility();
 }

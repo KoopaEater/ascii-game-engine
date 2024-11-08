@@ -1,4 +1,7 @@
-package game;
+package game.ascii;
+
+import game.ascii.actor.AsciiActor;
+import game.ascii.actor.SymbolAsciiActor;
 
 import java.awt.*;
 
@@ -7,7 +10,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
     AsciiActor player;
 
     public StandardAsciiGame() {
-        super("AsciiGame", 25, 13, 2);
+        super("AsciiGame", 25, 13, 4);
     }
 
     @Override
@@ -15,8 +18,8 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
         setBackgroundColor(Color.BLACK);
 
-        player = new SymbolAsciiActor(this);
-        player.setSymbol('O');
+        //player = new SymbolAsciiActor(this);
+        player.setSymbol('■');
         player.setColor(Color.RED);
         player.moveTo(12, 12);
         player.show();

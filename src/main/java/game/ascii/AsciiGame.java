@@ -1,4 +1,7 @@
-package game;
+package game.ascii;
+
+import game.Game;
+import game.ascii.actor.AsciiActor;
 
 import java.awt.*;
 
@@ -10,4 +13,6 @@ public interface AsciiGame extends Game {
     Color getColorOfSymbol(int x, int y);
     Color getBackgroundOfSymbol(int x, int y);
     char getSymbol(int x, int y);
+    int getXSymbols();
+    int getYSymbols();
 }

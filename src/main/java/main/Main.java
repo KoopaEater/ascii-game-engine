@@ -1,6 +1,6 @@
 package main;
 
-import game.StandardAsciiGame;
+import game.ascii.StandardAsciiGame;
 
 public class Main {
 
