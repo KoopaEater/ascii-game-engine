@@ -23,8 +23,12 @@ public class StandardSymbol implements Symbol {
 
     @Override
     public void setBackground(Color color) {
-        label.setOpaque(true);
         label.setBackground(color);
+    }
+
+    @Override
+    public void setBackgroundOpaque(boolean opaque) {
+        label.setOpaque(opaque);
     }
 
     @Override

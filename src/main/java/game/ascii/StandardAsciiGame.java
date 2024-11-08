@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class StandardAsciiGame extends AbstractAsciiGame {
 
-    MutableAsciiActor player;
+    MutableAsciiActor player, blob, goalA, goalB, goalC;
 
     public StandardAsciiGame() {
         super("AsciiGame", 25, 13, 4);
@@ -19,13 +19,30 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
         player = createSymbolActor();
         player.setSymbol('■');
-        player.setColor(Color.RED);
+        player.setColor(Color.GREEN);
         player.moveTo(12, 12);
         player.show();
 
-        setBackgroundOfSymbol(Color.WHITE, 12, 0);
-        setSymbol('X', 12, 6);
-        setColorOfSymbol(Color.GREEN, 12, 6);
+        blob = createSymbolActor();
+        blob.setSymbol('●');
+        blob.setColor(Color.RED);
+        blob.moveTo(12, 6);
+        blob.show();
+
+        goalA = createSymbolActor();
+        goalA.setBackground(Color.WHITE);
+        goalA.moveTo(11, 0);
+        goalA.show();
+
+        goalB = createSymbolActor();
+        goalB.setBackground(Color.WHITE);
+        goalB.moveTo(12, 0);
+        goalB.show();
+
+        goalC = createSymbolActor();
+        goalC.setBackground(Color.WHITE);
+        goalC.moveTo(13, 0);
+        goalC.show();
 
     }
 

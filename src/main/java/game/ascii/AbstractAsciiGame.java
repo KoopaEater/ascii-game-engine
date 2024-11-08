@@ -70,6 +70,10 @@ public abstract class AbstractAsciiGame implements AsciiGame {
         ui.setBackgroundOfSymbol(color, x, y);
     }
     @Override
+    public void setBackgroundOpaqueOfSymbol(boolean opaque, int x, int y) {
+        ui.setBackgroundOpaqueOfSymbol(opaque, x, y);
+    }
+    @Override
     public void setBackgroundColor(Color color) {
         ui.setBackgroundColor(color);
     }
@@ -101,6 +105,7 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     public MutableAsciiActor createSymbolActor() {
         SymbolAsciiActor actor = new SymbolAsciiActor();
         actor.addObserver(actorMap);
+        actorMap.addActor(actor);
         return actor;
     }
 

@@ -45,6 +45,19 @@ public class SymbolAsciiActor implements MutableAsciiActor, AsciiActorObservable
     }
 
     @Override
+    public void setBackground(Color color) {
+        this.background = color;
+        this.hasBackground = true;
+        notifyChange();
+    }
+
+    @Override
+    public void removeBackground() {
+        this.hasBackground = false;
+        notifyChange();
+    }
+
+    @Override
     public void move(int dx, int dy) {
         int xBefore = x;
         int yBefore = y;
@@ -55,9 +68,11 @@ public class SymbolAsciiActor implements MutableAsciiActor, AsciiActorObservable
 
     @Override
     public void moveTo(int x, int y) {
+        int xBefore = this.x;
+        int yBefore = this.y;
         this.x = x;
         this.y = y;
-        notifyChange();
+        notifyMove(xBefore, yBefore, x, y);
     }
 
     @Override

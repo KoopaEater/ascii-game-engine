@@ -21,36 +21,8 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         }
     }
 
-    private void addActor(AsciiActor actor) {
-        int x = actor.getX();
-        int y = actor.getY();
-        actorMap[y][x].addFirst(actor);
-    }
-
-    private void removeActor(AsciiActor actor) {
-        int x = actor.getX();
-        int y = actor.getY();
-        removeActorFrom(actor, x, y);
-    }
-
     private void removeActorFrom(AsciiActor actor, int x, int y) {
         actorMap[y][x].remove(actor);
-    }
-
-    @Override
-    public void onChange(AsciiActor actor) {
-
-        int x = actor.getX();
-        int y = actor.getY();
-
-        AsciiActor top = getVisibleTop(x, y);
-
-        if (top != actor) { // There's no need to update anything
-            return;
-        }
-
-        update(top);
-
     }
 
     // PRECONDITION: actor is the top actor
@@ -77,7 +49,15 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         game.setColorOfSymbol(color, x, y);
     }
     private void updateBackground(AsciiActor actor) {
-        // TODO: Implement this
+        boolean opaque = actor.hasBackground();
+        if (!opaque) {
+            return;
+        }
+        Color color = actor.getBackground();
+        int x = actor.getX();
+        int y = actor.getY();
+        game.setBackgroundOfSymbol(color, x, y);
+        game.setBackgroundOpaqueOfSymbol(opaque, x, y);
     }
     private AsciiActor getVisibleTop(int x, int y) {
         List<AsciiActor> actorsInThisCell = actorMap[y][x];
@@ -87,6 +67,36 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
             }
         }
         return new EmptyAsciiActor(x, y);
+    }
+
+    @Override
+    public void addActor(AsciiActor actor) {
+        int x = actor.getX();
+        int y = actor.getY();
+        actorMap[y][x].addFirst(actor);
+    }
+
+    @Override
+    public void removeActor(AsciiActor actor) {
+        int x = actor.getX();
+        int y = actor.getY();
+        removeActorFrom(actor, x, y);
+    }
+
+    @Override
+    public void onChange(AsciiActor actor) {
+
+        int x = actor.getX();
+        int y = actor.getY();
+
+        AsciiActor top = getVisibleTop(x, y);
+
+        if (top != actor) { // There's no need to update anything
+            return;
+        }
+
+        update(top);
+
     }
 
     @Override

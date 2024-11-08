@@ -116,6 +116,11 @@ public class StandardAsciiUI implements AsciiUI {
     }
 
     @Override
+    public void setBackgroundOpaqueOfSymbol(boolean opaque, int x, int y) {
+        symbols[y][x].setBackgroundOpaque(opaque);
+    }
+
+    @Override
     public void setBackgroundColor(Color color) {
         contentPane.setBackground(color);
     }
