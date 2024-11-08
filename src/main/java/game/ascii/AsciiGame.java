@@ -1,7 +1,7 @@
 package game.ascii;
 
 import game.Game;
-import game.ascii.actor.AsciiActor;
+import game.ascii.actor.MutableAsciiActor;
 
 import java.awt.*;
 
@@ -15,4 +15,5 @@ public interface AsciiGame extends Game {
     char getSymbol(int x, int y);
     int getXSymbols();
     int getYSymbols();
+    MutableAsciiActor createSymbolActor();
 }

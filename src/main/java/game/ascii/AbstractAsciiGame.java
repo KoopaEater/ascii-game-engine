@@ -2,9 +2,10 @@ package game.ascii;
 
 import engine.GameLoop;
 import engine.StandardGameLoop;
-import game.ascii.actor.AsciiActor;
 import game.ascii.actor.AsciiActorMap;
+import game.ascii.actor.MutableAsciiActor;
 import game.ascii.actor.StandardAsciiActorMap;
+import game.ascii.actor.SymbolAsciiActor;
 import ui.AsciiUI;
 import ui.StandardAsciiUI;
 
@@ -15,9 +16,12 @@ import java.io.InputStream;
 public abstract class AbstractAsciiGame implements AsciiGame {
     private GameLoop gameLoop;
     private AsciiUI ui;
-    private AsciiActorMap actorMap;
+    private StandardAsciiActorMap actorMap;
     private int xSymbols, ySymbols;
     public AbstractAsciiGame(String title, int xSymbols, int ySymbols, int frameRate) {
+
+        this.xSymbols = xSymbols;
+        this.ySymbols = ySymbols;
 
         ui = new StandardAsciiUI(title, xSymbols, ySymbols);
         trySetMonospacedFont();
@@ -92,6 +96,12 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     @Override
     public int getYSymbols() {
         return ySymbols;
+    }
+    @Override
+    public MutableAsciiActor createSymbolActor() {
+        SymbolAsciiActor actor = new SymbolAsciiActor();
+        actor.addObserver(actorMap);
+        return actor;
     }
 
     public abstract void setup();

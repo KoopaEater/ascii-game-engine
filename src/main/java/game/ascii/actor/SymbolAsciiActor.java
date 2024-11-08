@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SymbolAsciiActor implements AsciiActor, AsciiActorObservable {
+public class SymbolAsciiActor implements MutableAsciiActor, AsciiActorObservable {
     private int x, y;
     private char symbol;
     private Color color;
@@ -68,6 +68,31 @@ public class SymbolAsciiActor implements AsciiActor, AsciiActorObservable {
     @Override
     public int getY() {
         return y;
+    }
+
+    @Override
+    public char getSymbol() {
+        return symbol;
+    }
+
+    @Override
+    public Color getColor() {
+        return color;
+    }
+
+    @Override
+    public Color getBackground() {
+        return background;
+    }
+
+    @Override
+    public boolean hasBackground() {
+        return hasBackground;
+    }
+
+    @Override
+    public boolean isVisible() {
+        return visible;
     }
 
     @Override

@@ -1,13 +1,12 @@
 package game.ascii;
 
-import game.ascii.actor.AsciiActor;
-import game.ascii.actor.SymbolAsciiActor;
+import game.ascii.actor.MutableAsciiActor;
 
 import java.awt.*;
 
 public class StandardAsciiGame extends AbstractAsciiGame {
 
-    AsciiActor player;
+    MutableAsciiActor player;
 
     public StandardAsciiGame() {
         super("AsciiGame", 25, 13, 4);
@@ -18,7 +17,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
         setBackgroundColor(Color.BLACK);
 
-        //player = new SymbolAsciiActor(this);
+        player = createSymbolActor();
         player.setSymbol('■');
         player.setColor(Color.RED);
         player.moveTo(12, 12);
