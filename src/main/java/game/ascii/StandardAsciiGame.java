@@ -3,6 +3,7 @@ package game.ascii;
 import game.ascii.actor.MutableAsciiActor;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class StandardAsciiGame extends AbstractAsciiGame {
 
@@ -53,8 +54,17 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
     @Override
     public void fixedTick() {
-        if (player.getY() > 0) {
+        if (player.getY() > 0 && getLastKey() == KeyEvent.VK_UP) {
             player.move(0, -1);
+        }
+        if (player.getY() < 12 && getLastKey() == KeyEvent.VK_DOWN) {
+            player.move(0, 1);
+        }
+        if (player.getX() > 0 && getLastKey() == KeyEvent.VK_LEFT) {
+            player.move(-1, 0);
+        }
+        if (player.getX() < 24 && getLastKey() == KeyEvent.VK_RIGHT) {
+            player.move(1, 0);
         }
     }
 }

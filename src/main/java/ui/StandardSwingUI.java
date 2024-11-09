@@ -4,6 +4,7 @@ import javax.swing.*;
 import com.formdev.flatlaf.FlatLightLaf;
 
 import java.awt.*;
+import java.awt.event.KeyListener;
 
 public class StandardSwingUI implements SwingUI {
 
@@ -40,6 +41,11 @@ public class StandardSwingUI implements SwingUI {
     @Override
     public void updateSizeToFit() {
         mainFrame.pack();
+    }
+
+    @Override
+    public void addKeyListener(KeyListener keyListener) {
+        mainFrame.addKeyListener(keyListener);
     }
 
     @Override

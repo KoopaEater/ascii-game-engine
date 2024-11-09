@@ -6,6 +6,7 @@ import ui.utility.SymbolFunction;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyListener;
 
 public class StandardAsciiUI implements AsciiUI {
 
@@ -73,6 +74,11 @@ public class StandardAsciiUI implements AsciiUI {
     @Override
     public void setResizable(boolean resizable) {
         ui.setResizable(resizable);
+    }
+
+    @Override
+    public void addKeyListener(KeyListener keyListener) {
+        ui.addKeyListener(keyListener);
     }
 
     @Override

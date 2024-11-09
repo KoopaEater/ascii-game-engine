@@ -8,6 +8,7 @@ import game.ascii.actor.StandardAsciiActorMap;
 import game.ascii.actor.SymbolAsciiActor;
 import ui.AsciiUI;
 import ui.StandardAsciiUI;
+import ui.keyboard.StandardKeyboardHandler;
 
 import java.awt.*;
 import java.io.IOException;
@@ -17,17 +18,20 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     private GameLoop gameLoop;
     private AsciiUI ui;
     private StandardAsciiActorMap actorMap;
+    private StandardKeyboardHandler keyboardHandler;
     private int xSymbols, ySymbols;
     public AbstractAsciiGame(String title, int xSymbols, int ySymbols, int frameRate) {
 
         this.xSymbols = xSymbols;
         this.ySymbols = ySymbols;
 
+        actorMap = new StandardAsciiActorMap(this);
+        keyboardHandler = new StandardKeyboardHandler(this);
+
         ui = new StandardAsciiUI(title, xSymbols, ySymbols);
         trySetMonospacedFont();
+        ui.addKeyListener(keyboardHandler);
         ui.show();
-
-        actorMap = new StandardAsciiActorMap(this);
 
         gameLoop = new StandardGameLoop(frameRate);
         gameLoop.tick(this::tick);
@@ -107,6 +111,15 @@ public abstract class AbstractAsciiGame implements AsciiGame {
         actor.addObserver(actorMap);
         actorMap.addActor(actor);
         return actor;
+    }
+
+    @Override
+    public boolean isKeyDown(int keyCode) {
+        return keyboardHandler.isKeyDown(keyCode);
+    }
+    @Override
+    public int getLastKey() {
+        return keyboardHandler.getLastKey();
     }
 
     public abstract void setup();

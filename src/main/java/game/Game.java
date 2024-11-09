@@ -1,8 +1,8 @@
 package game;
 
-import ui.UI;
-
 public interface Game {
     void stopGameLoop();
     void startGameLoop();
+    boolean isKeyDown(int keyCode);
+    int getLastKey();
 }

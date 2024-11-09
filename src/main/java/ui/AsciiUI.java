@@ -1,8 +1,10 @@
 package ui;
 
 import java.awt.*;
+import java.awt.event.KeyListener;
 
 public interface AsciiUI extends UI {
+    void addKeyListener(KeyListener keyListener);
     void setFontName(String fontName);
     void setFontStyle(int fontStyle);
     void setFontSize(int fontSize);
