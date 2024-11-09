@@ -49,7 +49,11 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
     @Override
     public void tick(long deltaTime) {
-
+        if (isKeyDown(KeyEvent.VK_SPACE)) {
+            setFontSize(50);
+        } else {
+            setFontSize(24);
+        }
     }
 
     @Override

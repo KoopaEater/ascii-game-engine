@@ -6,6 +6,7 @@ import game.ascii.actor.MutableAsciiActor;
 import java.awt.*;
 
 public interface AsciiGame extends Game {
+    void setFontSize(int fontSize);
     void setColorOfSymbol(Color color, int x, int y);
     void setBackgroundOfSymbol(Color color, int x, int y);
     void setBackgroundOpaqueOfSymbol(boolean opaque, int x, int y);

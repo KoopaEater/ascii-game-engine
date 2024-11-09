@@ -83,6 +83,9 @@ public class StandardAsciiUI implements AsciiUI {
 
     @Override
     public void setFontName(String fontName) {
+        if (this.fontName != null && this.fontName.equals(fontName)) {
+            return;
+        }
         this.fontName = fontName;
         font = new Font(fontName, fontStyle, fontSize);
         redrawFont();
@@ -90,6 +93,9 @@ public class StandardAsciiUI implements AsciiUI {
 
     @Override
     public void setFontStyle(int fontStyle) {
+        if (this.fontStyle == fontStyle) {
+            return;
+        }
         this.fontStyle = fontStyle;
         font = new Font(fontName, fontStyle, fontSize);
         redrawFont();
@@ -97,6 +103,9 @@ public class StandardAsciiUI implements AsciiUI {
 
     @Override
     public void setFontSize(int fontSize) {
+        if (this.fontSize == fontSize) {
+            return;
+        }
         this.fontSize = fontSize;
         font = new Font(fontName, fontStyle, fontSize);
         redrawFont();
@@ -104,6 +113,9 @@ public class StandardAsciiUI implements AsciiUI {
 
     @Override
     public void setFont(Font font) {
+        if (this.font != null && this.font.equals(font)) {
+            return;
+        }
         fontName = font.getFontName();
         fontStyle = font.getStyle();
         fontSize = font.getSize();
