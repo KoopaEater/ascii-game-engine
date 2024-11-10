@@ -1,10 +1,13 @@
 package ui;
 
+import ui.mouse.ClickHandler;
+
 import java.awt.*;
 import java.awt.event.KeyListener;
 
 public interface AsciiUI extends UI {
     void addKeyListener(KeyListener keyListener);
+    void addClickHandler(ClickHandler clickHandler);
     void setFontName(String fontName);
     void setFontStyle(int fontStyle);
     void setFontSize(int fontSize);

@@ -2,24 +2,22 @@ package game.ascii;
 
 import engine.GameLoop;
 import engine.StandardGameLoop;
-import game.ascii.actor.AsciiActorMap;
 import game.ascii.actor.MutableAsciiActor;
 import game.ascii.actor.StandardAsciiActorMap;
 import game.ascii.actor.SymbolAsciiActor;
 import ui.AsciiUI;
 import ui.StandardAsciiUI;
 import ui.keyboard.StandardKeyboardHandler;
+import ui.mouse.StandardClickHandler;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.io.IOException;
-import java.io.InputStream;
 
 public abstract class AbstractAsciiGame implements AsciiGame {
     private GameLoop gameLoop;
     private AsciiUI ui;
     private StandardAsciiActorMap actorMap;
     private StandardKeyboardHandler keyboardHandler;
+    private StandardClickHandler clickHandler;
     private int xSymbols, ySymbols;
     public AbstractAsciiGame(String title, int xSymbols, int ySymbols, int frameRate) {
 
@@ -28,10 +26,12 @@ public abstract class AbstractAsciiGame implements AsciiGame {
 
         actorMap = new StandardAsciiActorMap(this);
         keyboardHandler = new StandardKeyboardHandler(this);
+        clickHandler = new StandardClickHandler(this);
 
         ui = new StandardAsciiUI(title, xSymbols, ySymbols);
         ui.setFontSize(50);
         ui.addKeyListener(keyboardHandler);
+        ui.addClickHandler(clickHandler);
         ui.show();
 
         gameLoop = new StandardGameLoop(frameRate);

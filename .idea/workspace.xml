@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Snapshot: IntelliJ reload and implementation for getting raw keyboard inputs">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fonts/Mx437_HP_100LX_8x8.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/fonts/Px437_HP_100LX_8x8.ttf" afterDir="false" />
+    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Snapshot: Now uses better square font">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/ClickEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/ClickHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/EmptyClickHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/StandardClickEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/StandardClickHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/AsciiUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/AsciiUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/StandardAsciiUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/StandardAsciiUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +41,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -56,6 +72,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -110,7 +127,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731249503855</updated>
-      <workItem from="1731249507017" duration="2462000" />
+      <workItem from="1731249507017" duration="4966000" />
     </task>
     <task id="LOCAL-00001" summary="Snapshot: IntelliJ reload and implementation for getting raw keyboard inputs">
       <option name="closed" value="true" />
@@ -120,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731250515942</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Snapshot: Now uses better square font">
+      <option name="closed" value="true" />
+      <created>1731254049957</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731254049957</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +153,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Snapshot: IntelliJ reload and implementation for getting raw keyboard inputs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Snapshot: IntelliJ reload and implementation for getting raw keyboard inputs" />
+    <MESSAGE value="Snapshot: Now uses better square font" />
+    <option name="LAST_COMMIT_MESSAGE" value="Snapshot: Now uses better square font" />
   </component>
 </project>

@@ -1,5 +1,7 @@
 package game;
 
+import ui.mouse.ClickEvent;
+
 import java.awt.event.KeyEvent;
 
 public interface Game {
@@ -10,4 +12,5 @@ public interface Game {
     void onKeyPressed(KeyEvent e);
     void onKeyReleased(KeyEvent e);
     void onKeyTyped(KeyEvent e);
+    void onClick(ClickEvent e);
 }

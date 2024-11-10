@@ -1,6 +1,10 @@
 package ui;
 
 import game.ascii.AbstractAsciiGame;
+import ui.mouse.StandardClickEvent;
+import ui.mouse.ClickEvent;
+import ui.mouse.ClickHandler;
+import ui.mouse.EmptyClickHandler;
 import ui.utility.StandardSymbol;
 import ui.utility.Symbol;
 import ui.utility.SymbolFunction;
@@ -8,6 +12,9 @@ import ui.utility.SymbolFunction;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -21,6 +28,7 @@ public class StandardAsciiUI implements AsciiUI {
     private int xSymbols, ySymbols;
     private JPanel contentPane;
     private Symbol[][] symbols;
+    private ClickHandler clickHandler;
 
     public StandardAsciiUI(String title, int xSymbols, int ySymbols) {
 
@@ -28,6 +36,8 @@ public class StandardAsciiUI implements AsciiUI {
         this.ySymbols = ySymbols;
 
         symbols = new Symbol[ySymbols][xSymbols];
+
+        clickHandler = new EmptyClickHandler();
 
         ui = new StandardSwingUI(title);
         ui.setResizable(false);
@@ -70,9 +80,20 @@ public class StandardAsciiUI implements AsciiUI {
                 JLabel symbolLabel = new JLabel(" ");
                 line.add(symbolLabel);
                 symbols[y][x] = new StandardSymbol(symbolLabel);
+                symbolLabel.addMouseListener(getMouseListenerFor(x, y));
             }
             contentPane.add(line);
         }
+    }
+
+    private MouseListener getMouseListenerFor(int x, int y) {
+        return new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                ClickEvent clickEvent = new StandardClickEvent(x, y);
+                clickHandler.onClick(clickEvent);
+            }
+        };
     }
 
     private void redrawFont() {
@@ -102,6 +123,11 @@ public class StandardAsciiUI implements AsciiUI {
     @Override
     public void addKeyListener(KeyListener keyListener) {
         ui.addKeyListener(keyListener);
+    }
+
+    @Override
+    public void addClickHandler(ClickHandler clickHandler) {
+        this.clickHandler = clickHandler;
     }
 
     @Override

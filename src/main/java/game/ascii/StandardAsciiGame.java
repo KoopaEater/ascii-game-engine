@@ -1,13 +1,14 @@
 package game.ascii;
 
 import game.ascii.actor.MutableAsciiActor;
+import ui.mouse.ClickEvent;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class StandardAsciiGame extends AbstractAsciiGame {
 
-    MutableAsciiActor player, blob, goalA, goalB, goalC;
+    MutableAsciiActor player, blob, goalA;
 
     public StandardAsciiGame() {
         super("AsciiGame", 13, 13, 4);
@@ -30,10 +31,10 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         blob.moveTo(6, 6);
         blob.show();
 
-        goalB = createSymbolActor();
-        goalB.setBackground(Color.WHITE);
-        goalB.moveTo(6, 0);
-        goalB.show();
+        goalA = createSymbolActor();
+        goalA.setBackground(Color.WHITE);
+        goalA.moveTo(6, 0);
+        goalA.show();
 
     }
 
@@ -74,6 +75,11 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
     @Override
     public void onKeyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void onClick(ClickEvent e) {
 
     }
 }

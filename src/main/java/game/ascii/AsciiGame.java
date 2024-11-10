@@ -2,6 +2,7 @@ package game.ascii;
 
 import game.Game;
 import game.ascii.actor.MutableAsciiActor;
+import ui.mouse.ClickEvent;
 
 import java.awt.*;
 
