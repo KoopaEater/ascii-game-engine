@@ -23,7 +23,7 @@ public class StandardKeyboardHandler implements KeyListener, KeyboardHandler {
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+        game.onKeyTyped(e);
     }
 
     @Override
@@ -35,6 +35,7 @@ public class StandardKeyboardHandler implements KeyListener, KeyboardHandler {
         keysPressed.add(keyCode);
         keyStack.addFirst(keyCode);
         lastKey = keyCode;
+        game.onKeyPressed(e);
     }
 
     @Override
@@ -51,7 +52,7 @@ public class StandardKeyboardHandler implements KeyListener, KeyboardHandler {
         } else {
             lastKey = keyStack.getFirst();
         }
-
+        game.onKeyReleased(e);
     }
 
     @Override

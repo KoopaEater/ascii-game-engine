@@ -71,4 +71,19 @@ public class StandardAsciiGame extends AbstractAsciiGame {
             player.move(1, 0);
         }
     }
+
+    @Override
+    public void onKeyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void onKeyReleased(KeyEvent e) {
+
+    }
+
+    @Override
+    public void onKeyTyped(KeyEvent e) {
+
+    }
 }
