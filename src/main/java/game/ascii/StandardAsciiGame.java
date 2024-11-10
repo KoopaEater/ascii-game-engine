@@ -23,8 +23,8 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         setBackgroundColor(Color.GRAY);
 
         player = createSymbolActor();
-        player.setSymbol('■');
-        player.setColor(Color.GREEN);
+        player.setSymbol('☻');
+        player.setColor(Color.YELLOW);
         player.moveTo(6, 12);
         player.setZ(ActorConstants.Z_FOREGROUND);
         player.show();
@@ -72,12 +72,6 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         if (player.getX() < 12 && getLastKey() == KeyEvent.VK_RIGHT) {
             player.move(1, 0);
         }
-
-//        ClickEvent ce = getLastClick();
-//        if (ce.getY() == player.getY()) {
-//            player.move(0, -1);
-//        }
-
     }
 
     @Override
