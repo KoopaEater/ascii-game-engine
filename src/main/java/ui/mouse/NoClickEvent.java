@@ -1,6 +1,6 @@
 package ui.mouse;
 
-public class EmptyClickEvent implements ClickEvent {
+public class NoClickEvent implements ClickEvent {
     @Override
     public int getX() {
         return -1;

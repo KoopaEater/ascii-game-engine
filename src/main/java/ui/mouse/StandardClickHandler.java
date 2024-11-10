@@ -7,7 +7,7 @@ public class StandardClickHandler implements ClickHandler {
     private ClickEvent lastClick;
     public StandardClickHandler(AsciiGame game) {
         this.game = game;
-        lastClick = new EmptyClickEvent();
+        lastClick = new NoClickEvent();
     }
 
     @Override

@@ -9,10 +9,11 @@ import java.util.List;
 public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver {
     private List<AsciiActor>[][] actorMap;
     private AsciiGame game;
+    int xSymbols, ySymbols;
     public StandardAsciiActorMap(AsciiGame game) {
         this.game = game;
-        int xSymbols = game.getXSymbols();
-        int ySymbols = game.getYSymbols();
+        xSymbols = game.getXSymbols();
+        ySymbols = game.getYSymbols();
         actorMap = new List[ySymbols][xSymbols];
         for (int y = 0; y < ySymbols; y++) {
             for (int x = 0; x < xSymbols; x++) {
@@ -22,6 +23,7 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
     }
 
     private void removeActorFrom(AsciiActor actor, int x, int y) {
+        if (!isValidSpot(x, y)) return;
         actorMap[y][x].remove(actor);
     }
 
@@ -37,15 +39,17 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         update(topActor);
     }
     private void updateSymbol(AsciiActor actor) {
-        char symbol = actor.getSymbol();
         int x = actor.getX();
         int y = actor.getY();
+        if (!isValidSpot(x, y)) return;
+        char symbol = actor.getSymbol();
         game.setSymbol(symbol, x, y);
     }
     private void updateColor(AsciiActor actor) {
         Color color = actor.getColor();
         int x = actor.getX();
         int y = actor.getY();
+        if (!isValidSpot(x, y)) return;
         game.setColorOfSymbol(color, x, y);
     }
     private void updateBackground(AsciiActor actor) {
@@ -53,13 +57,15 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         if (!opaque) {
             return;
         }
-        Color color = actor.getBackground();
         int x = actor.getX();
         int y = actor.getY();
+        if (!isValidSpot(x, y)) return;
+        Color color = actor.getBackground();
         game.setBackgroundOfSymbol(color, x, y);
         game.setBackgroundOpaqueOfSymbol(true, x, y);
     }
     private AsciiActor getVisibleTop(int x, int y) {
+        if (!isValidSpot(x, y)) return new NoAsciiActor();
         List<AsciiActor> actorsInThisCell = actorMap[y][x];
         for (AsciiActor actor : actorsInThisCell) {
             if (actor.isVisible()) {
@@ -69,10 +75,17 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         return new EmptyAsciiActor(x, y);
     }
 
+    private boolean isValidSpot(int x, int y) {
+        if (x < 0 || x >= xSymbols) return false;
+        if (y < 0 || y >= ySymbols) return false;
+        return true;
+    }
+
     @Override
     public void addActor(AsciiActor actor) {
         int x = actor.getX();
         int y = actor.getY();
+        if (!isValidSpot(x, y)) return;
         actorMap[y][x].addFirst(actor);
     }
 
@@ -80,6 +93,7 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
     public void removeActor(AsciiActor actor) {
         int x = actor.getX();
         int y = actor.getY();
+        if (!isValidSpot(x, y)) return;
         removeActorFrom(actor, x, y);
     }
 

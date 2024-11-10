@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Snapshot: LastClick implemented" />
+    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Refactor: Simplified updateBackground in StandardAsciiActorMap">
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/NoAsciiActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/StandardAsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/StandardAsciiActorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/mouse/EmptyClickEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/NoClickEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/mouse/StandardClickHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/StandardClickHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731249503855</updated>
-      <workItem from="1731249507017" duration="6242000" />
+      <workItem from="1731249507017" duration="7404000" />
     </task>
     <task id="LOCAL-00001" summary="Snapshot: IntelliJ reload and implementation for getting raw keyboard inputs">
       <option name="closed" value="true" />
@@ -147,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731257389333</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Refactor: Simplified updateBackground in StandardAsciiActorMap">
+      <option name="closed" value="true" />
+      <created>1731257936651</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731257936651</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +173,7 @@
     <MESSAGE value="Snapshot: Now uses better square font" />
     <MESSAGE value="Milestone: Click support has been added" />
     <MESSAGE value="Snapshot: LastClick implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Snapshot: LastClick implemented" />
+    <MESSAGE value="Refactor: Simplified updateBackground in StandardAsciiActorMap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Simplified updateBackground in StandardAsciiActorMap" />
   </component>
 </project>

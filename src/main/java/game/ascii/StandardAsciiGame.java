@@ -49,7 +49,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
     @Override
     public void fixedTick() {
-        if (player.getY() > 0 && getLastKey() == KeyEvent.VK_UP) {
+        if (getLastKey() == KeyEvent.VK_UP) {
             player.move(0, -1);
         }
         if (player.getY() < 12 && getLastKey() == KeyEvent.VK_DOWN) {
