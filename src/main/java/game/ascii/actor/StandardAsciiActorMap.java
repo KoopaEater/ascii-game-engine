@@ -57,7 +57,7 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         int x = actor.getX();
         int y = actor.getY();
         game.setBackgroundOfSymbol(color, x, y);
-        game.setBackgroundOpaqueOfSymbol(opaque, x, y);
+        game.setBackgroundOpaqueOfSymbol(true, x, y);
     }
     private AsciiActor getVisibleTop(int x, int y) {
         List<AsciiActor> actorsInThisCell = actorMap[y][x];
