@@ -90,6 +90,13 @@ public class SymbolTextAsciiActor implements MutableTextAsciiActor, TextAsciiAct
     }
 
     @Override
+    public void setZ(int z) {
+        for (SymbolAsciiActor actor : actors) {
+            actor.setZ(z);
+        }
+    }
+
+    @Override
     public void show() {
         visible = true;
         updateVisibility();

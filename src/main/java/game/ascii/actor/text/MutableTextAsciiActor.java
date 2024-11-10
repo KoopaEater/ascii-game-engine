@@ -8,6 +8,7 @@ public interface MutableTextAsciiActor extends TextAsciiActor {
     void setBackground(Color color);
     void removeBackground();
     void setOrigin(int x, int y);
+    void setZ(int z);
     void show();
     void hide();
     void toggleVisibility();

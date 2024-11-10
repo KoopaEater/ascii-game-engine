@@ -41,6 +41,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
         text = createSymbolTextActor(13);
         text.setText("Hej!");
+        text.setZ(-2);
         text.show();
 
     }

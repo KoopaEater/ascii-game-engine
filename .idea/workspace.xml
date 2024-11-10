@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Milestone: TextActors are added">
+    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Snapshot: SymbolActors can now have z-indexes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/EmptyAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/EmptyAsciiActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/MutableAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/MutableAsciiActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/NoAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/NoAsciiActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/SymbolAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/SymbolAsciiActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/actormap/StandardAsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/actormap/StandardAsciiActorMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/AsciiActorObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/AsciiActorObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/MutableTextAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/MutableTextAsciiActor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/SymbolTextAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/SymbolTextAsciiActor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731267882438</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Snapshot: SymbolActors can now have z-indexes">
+      <option name="closed" value="true" />
+      <created>1731270811068</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731270811068</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +189,7 @@
     <MESSAGE value="Snapshot: LastClick implemented" />
     <MESSAGE value="Refactor: Simplified updateBackground in StandardAsciiActorMap" />
     <MESSAGE value="Milestone: TextActors are added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Milestone: TextActors are added" />
+    <MESSAGE value="Snapshot: SymbolActors can now have z-indexes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Snapshot: SymbolActors can now have z-indexes" />
   </component>
 </project>
