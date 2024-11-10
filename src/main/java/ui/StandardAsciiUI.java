@@ -1,5 +1,6 @@
 package ui;
 
+import game.ascii.AbstractAsciiGame;
 import ui.utility.StandardSymbol;
 import ui.utility.Symbol;
 import ui.utility.SymbolFunction;
@@ -7,6 +8,8 @@ import ui.utility.SymbolFunction;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class StandardAsciiUI implements AsciiUI {
 
@@ -30,8 +33,28 @@ public class StandardAsciiUI implements AsciiUI {
         ui.setResizable(false);
         fillScreen(xSymbols, ySymbols);
         setFont(new Font("Monospaced", Font.PLAIN, 14));
+        trySetSquareFont();
         ui.setContent(contentPane);
         ui.updateSizeToFit();
+    }
+
+    // https://int10h.org/oldschool-pc-fonts/fontlist/font?hp_100lx_8x8
+    private void trySetSquareFont() {
+        try {
+            // Courtesy of Copilot
+            InputStream resourceStream = AbstractAsciiGame.class.getResourceAsStream("/fonts/Px437_HP_100LX_8x8.ttf");
+            if (resourceStream == null) {
+                throw new IOException("Font file not found");
+            }
+            Font jetBrainsMonoFont = Font.createFont(Font.TRUETYPE_FONT, resourceStream);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(jetBrainsMonoFont);
+            setFont(jetBrainsMonoFont);
+        } catch (FontFormatException e) {
+            System.out.println("Could not format font. Uses default font.");
+        } catch (IOException e) {
+            System.out.println("Could not load font. Uses default font.");
+        }
     }
 
     private void fillScreen(int xSymbols, int ySymbols) {

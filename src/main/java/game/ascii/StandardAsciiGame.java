@@ -10,7 +10,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
     MutableAsciiActor player, blob, goalA, goalB, goalC;
 
     public StandardAsciiGame() {
-        super("AsciiGame", 25, 13, 4);
+        super("AsciiGame", 13, 13, 4);
     }
 
     @Override
@@ -21,38 +21,28 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         player = createSymbolActor();
         player.setSymbol('■');
         player.setColor(Color.GREEN);
-        player.moveTo(12, 12);
+        player.moveTo(6, 12);
         player.show();
 
         blob = createSymbolActor();
-        blob.setSymbol('●');
+        blob.setSymbol('♥');
         blob.setColor(Color.RED);
-        blob.moveTo(12, 6);
+        blob.moveTo(6, 6);
         blob.show();
-
-        goalA = createSymbolActor();
-        goalA.setBackground(Color.WHITE);
-        goalA.moveTo(11, 0);
-        goalA.show();
 
         goalB = createSymbolActor();
         goalB.setBackground(Color.WHITE);
-        goalB.moveTo(12, 0);
+        goalB.moveTo(6, 0);
         goalB.show();
-
-        goalC = createSymbolActor();
-        goalC.setBackground(Color.WHITE);
-        goalC.moveTo(13, 0);
-        goalC.show();
 
     }
 
     @Override
     public void tick(long deltaTime) {
         if (isKeyDown(KeyEvent.VK_SPACE)) {
-            setFontSize(50);
-        } else {
             setFontSize(24);
+        } else {
+            setFontSize(50);
         }
     }
 
@@ -67,7 +57,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         if (player.getX() > 0 && getLastKey() == KeyEvent.VK_LEFT) {
             player.move(-1, 0);
         }
-        if (player.getX() < 24 && getLastKey() == KeyEvent.VK_RIGHT) {
+        if (player.getX() < 12 && getLastKey() == KeyEvent.VK_RIGHT) {
             player.move(1, 0);
         }
     }

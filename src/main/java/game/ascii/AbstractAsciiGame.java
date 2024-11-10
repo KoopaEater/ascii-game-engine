@@ -30,7 +30,6 @@ public abstract class AbstractAsciiGame implements AsciiGame {
         keyboardHandler = new StandardKeyboardHandler(this);
 
         ui = new StandardAsciiUI(title, xSymbols, ySymbols);
-        trySetMonospacedFont();
         ui.setFontSize(50);
         ui.addKeyListener(keyboardHandler);
         ui.show();
@@ -40,24 +39,6 @@ public abstract class AbstractAsciiGame implements AsciiGame {
         gameLoop.fixedTick(this::fixedTick);
         gameLoop.setupTick(this::setup);
         gameLoop.start();
-    }
-
-    private void trySetMonospacedFont() {
-        try {
-            // Courtesy of Copilot
-            InputStream resourceStream = AbstractAsciiGame.class.getResourceAsStream("/fonts/JetBrainsMono-Regular.ttf");
-            if (resourceStream == null) {
-                throw new IOException("Font file not found");
-            }
-            Font jetBrainsMonoFont = Font.createFont(Font.TRUETYPE_FONT, resourceStream);
-            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge.registerFont(jetBrainsMonoFont);
-            ui.setFont(jetBrainsMonoFont);
-        } catch (FontFormatException e) {
-            System.out.println("Could not format font. Uses default font.");
-        } catch (IOException e) {
-            System.out.println("Could not load font. Uses default font.");
-        }
     }
 
     public void stopGameLoop() {
