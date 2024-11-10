@@ -1,6 +1,6 @@
-package game.ascii.actor.actormap;
+package actor.ascii.actormap;
 
-import game.ascii.actor.AsciiActor;
+import actor.ascii.AsciiActor;
 
 public interface AsciiActorMap {
     void addActor(AsciiActor actor);

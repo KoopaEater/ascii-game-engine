@@ -1,4 +1,4 @@
-package game.ascii.actor.observer;
+package actor.ascii.observer;
 
 public interface AsciiActorObservable {
     void addObserver(AsciiActorObserver observer);

@@ -1,7 +1,7 @@
-package game.ascii.actor;
+package actor.ascii;
 
-import game.ascii.actor.observer.AsciiActorObservable;
-import game.ascii.actor.observer.AsciiActorObserver;
+import actor.ascii.observer.AsciiActorObservable;
+import actor.ascii.observer.AsciiActorObserver;
 
 import java.awt.Color;
 import java.util.ArrayList;

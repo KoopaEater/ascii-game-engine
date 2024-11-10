@@ -1,4 +1,4 @@
-package game.ascii.actor.text;
+package actor.ascii.text;
 
 import java.awt.*;
 

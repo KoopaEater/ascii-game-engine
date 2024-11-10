@@ -2,12 +2,12 @@ package game.ascii;
 
 import engine.GameLoop;
 import engine.StandardGameLoop;
-import game.ascii.actor.AsciiActor;
-import game.ascii.actor.MutableAsciiActor;
-import game.ascii.actor.actormap.StandardAsciiActorMap;
-import game.ascii.actor.SymbolAsciiActor;
-import game.ascii.actor.text.MutableTextAsciiActor;
-import game.ascii.actor.text.SymbolTextAsciiActor;
+import actor.ascii.AsciiActor;
+import actor.ascii.MutableAsciiActor;
+import actor.ascii.actormap.StandardAsciiActorMap;
+import actor.ascii.SymbolAsciiActor;
+import actor.ascii.text.MutableTextAsciiActor;
+import actor.ascii.text.SymbolTextAsciiActor;
 import ui.AsciiUI;
 import ui.StandardAsciiUI;
 import ui.keyboard.StandardKeyboardHandler;

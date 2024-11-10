@@ -1,9 +1,9 @@
-package game.ascii.actor.text;
+package actor.ascii.text;
 
-import game.ascii.actor.AsciiActor;
-import game.ascii.actor.SymbolAsciiActor;
-import game.ascii.actor.observer.AsciiActorObserver;
-import game.ascii.actor.observer.TextAsciiActorObservable;
+import actor.ascii.AsciiActor;
+import actor.ascii.SymbolAsciiActor;
+import actor.ascii.observer.AsciiActorObserver;
+import actor.ascii.observer.TextAsciiActorObservable;
 
 import java.awt.*;
 

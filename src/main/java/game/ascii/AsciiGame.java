@@ -1,9 +1,8 @@
 package game.ascii;
 
 import game.Game;
-import game.ascii.actor.MutableAsciiActor;
-import game.ascii.actor.text.MutableTextAsciiActor;
-import ui.mouse.ClickEvent;
+import actor.ascii.MutableAsciiActor;
+import actor.ascii.text.MutableTextAsciiActor;
 
 import java.awt.*;
 

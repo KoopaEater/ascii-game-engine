@@ -1,7 +1,8 @@
 package game.ascii;
 
-import game.ascii.actor.MutableAsciiActor;
-import game.ascii.actor.text.MutableTextAsciiActor;
+import actor.ActorConstants;
+import actor.ascii.MutableAsciiActor;
+import actor.ascii.text.MutableTextAsciiActor;
 import ui.mouse.ClickEvent;
 
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.awt.event.KeyEvent;
 
 public class StandardAsciiGame extends AbstractAsciiGame {
 
-    MutableAsciiActor player, blob, goalA;
+    MutableAsciiActor player, heart, goalA;
     MutableTextAsciiActor text;
 
     public StandardAsciiGame() {
@@ -25,23 +26,25 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         player.setSymbol('■');
         player.setColor(Color.GREEN);
         player.moveTo(6, 12);
-        player.setZ(-1);
+        player.setZ(ActorConstants.Z_FOREGROUND);
         player.show();
 
-        blob = createSymbolActor();
-        blob.setSymbol('♥');
-        blob.setColor(Color.RED);
-        blob.moveTo(6, 6);
-        blob.show();
+        heart = createSymbolActor();
+        heart.setSymbol('♥');
+        heart.setColor(Color.RED);
+        heart.moveTo(6, 6);
+        heart.setZ(ActorConstants.Z_DEFAULT);
+        heart.show();
 
         goalA = createSymbolActor();
         goalA.setBackground(Color.WHITE);
         goalA.moveTo(6, 0);
+        goalA.setZ(ActorConstants.Z_BACKGROUND);
         goalA.show();
 
         text = createSymbolTextActor(13);
         text.setText("Hej!");
-        text.setZ(-2);
+        text.setZ(ActorConstants.Z_OVERLAY);
         text.show();
 
     }
