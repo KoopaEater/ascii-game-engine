@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Refactor: Simplified updateBackground in StandardAsciiActorMap">
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/NoAsciiActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/TextAsciiActorObservable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/MutableTextAsciiActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/SymbolTextAsciiActor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/TextAsciiActor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/StandardAsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/StandardAsciiActorMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/mouse/EmptyClickEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/NoClickEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/mouse/StandardClickHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/mouse/StandardClickHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/actormap/AsciiActorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActorObservable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/AsciiActorObservable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActorObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/AsciiActorObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/StandardAsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/actormap/StandardAsciiActorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/SymbolAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/SymbolAsciiActor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -51,35 +58,35 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2of8vjZ7ntE6K7LKMGOdb3mYBjT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Programmering/JavaProjects/ascii-game-engine/src/main/resources/fonts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Programmering/JavaProjects/ascii-game-engine/src/main/resources/fonts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Programmering\JavaProjects\ascii-game-engine\src\main\resources\fonts" />

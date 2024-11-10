@@ -2,6 +2,7 @@ package game.ascii;
 
 import game.Game;
 import game.ascii.actor.MutableAsciiActor;
+import game.ascii.actor.text.MutableTextAsciiActor;
 import ui.mouse.ClickEvent;
 
 import java.awt.*;
@@ -19,4 +20,5 @@ public interface AsciiGame extends Game {
     int getXSymbols();
     int getYSymbols();
     MutableAsciiActor createSymbolActor();
+    MutableTextAsciiActor createSymbolTextActor(int length);
 }

@@ -1,4 +1,6 @@
-package game.ascii.actor;
+package game.ascii.actor.observer;
+
+import game.ascii.actor.AsciiActor;
 
 public interface AsciiActorObserver {
     void onChange(AsciiActor actor);

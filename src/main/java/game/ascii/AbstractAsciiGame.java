@@ -2,9 +2,12 @@ package game.ascii;
 
 import engine.GameLoop;
 import engine.StandardGameLoop;
+import game.ascii.actor.AsciiActor;
 import game.ascii.actor.MutableAsciiActor;
-import game.ascii.actor.StandardAsciiActorMap;
+import game.ascii.actor.actormap.StandardAsciiActorMap;
 import game.ascii.actor.SymbolAsciiActor;
+import game.ascii.actor.text.MutableTextAsciiActor;
+import game.ascii.actor.text.SymbolTextAsciiActor;
 import ui.AsciiUI;
 import ui.StandardAsciiUI;
 import ui.keyboard.StandardKeyboardHandler;
@@ -98,6 +101,16 @@ public abstract class AbstractAsciiGame implements AsciiGame {
         SymbolAsciiActor actor = new SymbolAsciiActor();
         actor.addObserver(actorMap);
         actorMap.addActor(actor);
+        return actor;
+    }
+    @Override
+    public MutableTextAsciiActor createSymbolTextActor(int length) {
+        SymbolTextAsciiActor actor = new SymbolTextAsciiActor(length);
+        actor.addObserver(actorMap);
+        AsciiActor[] symbolActors = actor.getActors();
+        for (AsciiActor symbolActor : symbolActors) {
+            actorMap.addActor(symbolActor);
+        }
         return actor;
     }
 

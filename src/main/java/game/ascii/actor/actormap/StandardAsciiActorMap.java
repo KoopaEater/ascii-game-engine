@@ -1,6 +1,10 @@
-package game.ascii.actor;
+package game.ascii.actor.actormap;
 
 import game.ascii.AsciiGame;
+import game.ascii.actor.AsciiActor;
+import game.ascii.actor.EmptyAsciiActor;
+import game.ascii.actor.NoAsciiActor;
+import game.ascii.actor.observer.AsciiActorObserver;
 
 import java.awt.*;
 import java.util.LinkedList;

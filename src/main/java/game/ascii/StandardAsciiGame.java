@@ -1,6 +1,7 @@
 package game.ascii;
 
 import game.ascii.actor.MutableAsciiActor;
+import game.ascii.actor.text.MutableTextAsciiActor;
 import ui.mouse.ClickEvent;
 
 import java.awt.*;
@@ -9,6 +10,7 @@ import java.awt.event.KeyEvent;
 public class StandardAsciiGame extends AbstractAsciiGame {
 
     MutableAsciiActor player, blob, goalA;
+    MutableTextAsciiActor text;
 
     public StandardAsciiGame() {
         super("AsciiGame", 13, 13, 4);
@@ -17,7 +19,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
     @Override
     public void setup() {
 
-        setBackgroundColor(Color.BLACK);
+        setBackgroundColor(Color.GRAY);
 
         player = createSymbolActor();
         player.setSymbol('■');
@@ -35,6 +37,10 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         goalA.setBackground(Color.WHITE);
         goalA.moveTo(6, 0);
         goalA.show();
+
+        text = createSymbolTextActor(13);
+        text.setText("Hej!");
+        text.show();
 
     }
 
