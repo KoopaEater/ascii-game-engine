@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SymbolAsciiActor implements MutableAsciiActor, AsciiActorObservable {
-    private int x, y;
+    private int x, y, z;
     private char symbol;
     private Color color;
     private Color background;
@@ -17,7 +17,7 @@ public class SymbolAsciiActor implements MutableAsciiActor, AsciiActorObservable
     private List<AsciiActorObserver> observers;
     public SymbolAsciiActor() {
         symbol = ' ';
-        x = y = 0;
+        x = y = z = 0;
         color = Color.BLACK;
         background = Color.WHITE;
         hasBackground = false;
@@ -32,6 +32,11 @@ public class SymbolAsciiActor implements MutableAsciiActor, AsciiActorObservable
     private void notifyMove(int xFrom, int yFrom, int xTo, int yTo) {
         for (AsciiActorObserver observer : observers) {
             observer.onMove(xFrom, yFrom, xTo, yTo, this);
+        }
+    }
+    private void notifyUpdateZ() {
+        for (AsciiActorObserver observer : observers) {
+            observer.onUpdateZ(this);
         }
     }
 
@@ -79,6 +84,12 @@ public class SymbolAsciiActor implements MutableAsciiActor, AsciiActorObservable
     }
 
     @Override
+    public void setZ(int z) {
+        this.z = z;
+        notifyUpdateZ();
+    }
+
+    @Override
     public int getX() {
         return x;
     }
@@ -86,6 +97,11 @@ public class SymbolAsciiActor implements MutableAsciiActor, AsciiActorObservable
     @Override
     public int getY() {
         return y;
+    }
+
+    @Override
+    public int getZ() {
+        return z;
     }
 
     @Override

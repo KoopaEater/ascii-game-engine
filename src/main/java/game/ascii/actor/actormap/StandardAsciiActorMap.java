@@ -85,12 +85,23 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         return true;
     }
 
-    @Override
-    public void addActor(AsciiActor actor) {
+    private void addActorOnCorrectZ(AsciiActor actor) {
         int x = actor.getX();
         int y = actor.getY();
         if (!isValidSpot(x, y)) return;
-        actorMap[y][x].addFirst(actor);
+        List<AsciiActor> thisCell = actorMap[y][x];
+        int i = 0;
+        while (i < thisCell.size()) {
+            AsciiActor otherActor = thisCell.get(i);
+            if (otherActor.getZ() <= actor.getZ()) break;
+            i++;
+        }
+        thisCell.add(i, actor);
+    }
+
+    @Override
+    public void addActor(AsciiActor actor) {
+        addActorOnCorrectZ(actor);
     }
 
     @Override
@@ -120,8 +131,15 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
     @Override
     public void onMove(int xFrom, int yFrom, int xTo, int yTo, AsciiActor actor) {
         removeActorFrom(actor, xFrom, yFrom);
-        addActor(actor);
+        addActorOnCorrectZ(actor);
         update(xFrom, yFrom);
         update(xTo, yTo);
+    }
+
+    @Override
+    public void onUpdateZ(AsciiActor actor) {
+        removeActor(actor);
+        addActorOnCorrectZ(actor);
+        onChange(actor);
     }
 }

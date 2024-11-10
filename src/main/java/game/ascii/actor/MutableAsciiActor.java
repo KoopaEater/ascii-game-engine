@@ -9,6 +9,7 @@ public interface MutableAsciiActor extends AsciiActor {
     void removeBackground();
     void move(int dx, int dy);
     void moveTo(int x, int y);
+    void setZ(int z);
     void show();
     void hide();
     void toggleVisibility();

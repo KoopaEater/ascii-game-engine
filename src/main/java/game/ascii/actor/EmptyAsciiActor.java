@@ -20,6 +20,11 @@ public class EmptyAsciiActor implements AsciiActor {
     }
 
     @Override
+    public int getZ() {
+        return Integer.MIN_VALUE;
+    }
+
+    @Override
     public char getSymbol() {
         return ' ';
     }

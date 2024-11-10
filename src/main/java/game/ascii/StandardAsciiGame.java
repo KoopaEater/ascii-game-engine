@@ -25,6 +25,7 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         player.setSymbol('■');
         player.setColor(Color.GREEN);
         player.moveTo(6, 12);
+        player.setZ(-1);
         player.show();
 
         blob = createSymbolActor();
@@ -68,10 +69,10 @@ public class StandardAsciiGame extends AbstractAsciiGame {
             player.move(1, 0);
         }
 
-        ClickEvent ce = getLastClick();
-        if (ce.getY() == player.getY()) {
-            player.move(0, -1);
-        }
+//        ClickEvent ce = getLastClick();
+//        if (ce.getY() == player.getY()) {
+//            player.move(0, -1);
+//        }
 
     }
 
@@ -92,6 +93,6 @@ public class StandardAsciiGame extends AbstractAsciiGame {
 
     @Override
     public void onClick(ClickEvent e) {
-
+        text.setOrigin(e.getX(), e.getY());
     }
 }

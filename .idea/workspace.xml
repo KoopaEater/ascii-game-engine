@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Refactor: Simplified updateBackground in StandardAsciiActorMap">
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/TextAsciiActorObservable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/MutableTextAsciiActor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/SymbolTextAsciiActor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/TextAsciiActor.java" afterDir="false" />
+    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Milestone: TextActors are added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/StandardAsciiGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/actormap/AsciiActorMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActorObservable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/AsciiActorObservable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActorObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/AsciiActorObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/StandardAsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/actormap/StandardAsciiActorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/AsciiActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/EmptyAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/EmptyAsciiActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/MutableAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/MutableAsciiActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/NoAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/NoAsciiActor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/SymbolAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/SymbolAsciiActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/actormap/StandardAsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/actormap/StandardAsciiActorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/AsciiActorObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/observer/AsciiActorObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/SymbolTextAsciiActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/actor/text/SymbolTextAsciiActor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731257936651</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Milestone: TextActors are added">
+      <option name="closed" value="true" />
+      <created>1731267882438</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731267882438</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +186,7 @@
     <MESSAGE value="Milestone: Click support has been added" />
     <MESSAGE value="Snapshot: LastClick implemented" />
     <MESSAGE value="Refactor: Simplified updateBackground in StandardAsciiActorMap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor: Simplified updateBackground in StandardAsciiActorMap" />
+    <MESSAGE value="Milestone: TextActors are added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Milestone: TextActors are added" />
   </component>
 </project>

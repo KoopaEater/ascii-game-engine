@@ -11,11 +11,13 @@ public class SymbolTextAsciiActor implements MutableTextAsciiActor, TextAsciiAct
     private int length;
     private String text;
     private int x, y;
+    private boolean visible;
     SymbolAsciiActor[] actors;
     public SymbolTextAsciiActor(int length) {
         this.length = length;
         text = "";
         x = y = 0;
+        visible = false;
         actors = new SymbolAsciiActor[length];
         fillActors();
     }
@@ -36,14 +38,23 @@ public class SymbolTextAsciiActor implements MutableTextAsciiActor, TextAsciiAct
             actor.hide();
         }
     }
+    private void updateVisibility() {
+        for (int i = 0; i < text.length(); i++) {
+            if (visible) {
+                actors[i].show();
+            } else {
+                actors[i].hide();
+            }
+        }
+    }
 
     @Override
     public void setText(String text) {
         clearSymbols();
-        this.text = text;
+        int newTextLength = Math.min(text.length(), length);
+        this.text = text.substring(0, newTextLength);
         char[] chars = text.toCharArray();
-        int maxIndex = Math.min(chars.length, length) - 1;
-        for (int i = 0; i <= maxIndex; i++) {
+        for (int i = 0; i < newTextLength; i++) {
             SymbolAsciiActor actor = actors[i];
             actor.setSymbol(chars[i]);
             actor.show();
@@ -80,24 +91,20 @@ public class SymbolTextAsciiActor implements MutableTextAsciiActor, TextAsciiAct
 
     @Override
     public void show() {
-        for (int i = 0; i < length; i++) {
-            actors[i].show();
-        }
-
+        visible = true;
+        updateVisibility();
     }
 
     @Override
     public void hide() {
-        for (SymbolAsciiActor actor : actors) {
-            actor.hide();
-        }
+        visible = false;
+        updateVisibility();
     }
 
     @Override
     public void toggleVisibility() {
-        for (SymbolAsciiActor actor : actors) {
-            actor.toggleVisibility();
-        }
+        visible = !visible;
+        updateVisibility();
     }
 
     @Override
