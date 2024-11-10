@@ -61,6 +61,12 @@ public class StandardAsciiGame extends AbstractAsciiGame {
         if (player.getX() < 12 && getLastKey() == KeyEvent.VK_RIGHT) {
             player.move(1, 0);
         }
+
+        ClickEvent ce = getLastClick();
+        if (ce.getY() == player.getY()) {
+            player.move(0, -1);
+        }
+
     }
 
     @Override

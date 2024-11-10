@@ -8,6 +8,7 @@ import game.ascii.actor.SymbolAsciiActor;
 import ui.AsciiUI;
 import ui.StandardAsciiUI;
 import ui.keyboard.StandardKeyboardHandler;
+import ui.mouse.ClickEvent;
 import ui.mouse.StandardClickHandler;
 
 import java.awt.*;
@@ -107,6 +108,10 @@ public abstract class AbstractAsciiGame implements AsciiGame {
     @Override
     public int getLastKey() {
         return keyboardHandler.getLastKey();
+    }
+    @Override
+    public ClickEvent getLastClick() {
+        return clickHandler.getLastClick();
     }
 
     public abstract void setup();

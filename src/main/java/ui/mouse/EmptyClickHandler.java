@@ -5,4 +5,9 @@ public class EmptyClickHandler implements ClickHandler {
     public void onClick(ClickEvent e) {
 
     }
+
+    @Override
+    public ClickEvent getLastClick() {
+        return null;
+    }
 }

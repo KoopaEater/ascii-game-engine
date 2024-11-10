@@ -13,4 +13,5 @@ public interface Game {
     void onKeyReleased(KeyEvent e);
     void onKeyTyped(KeyEvent e);
     void onClick(ClickEvent e);
+    ClickEvent getLastClick();
 }
