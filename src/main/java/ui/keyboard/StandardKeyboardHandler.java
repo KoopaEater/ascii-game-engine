@@ -12,7 +12,7 @@ import java.util.Set;
 public class StandardKeyboardHandler implements KeyListener, KeyboardHandler {
     private Game game;
     private Set<Integer> keysPressed;
-    private List<Integer> keyStack;
+    private LinkedList<Integer> keyStack;
     private int lastKey;
     public StandardKeyboardHandler(Game game) {
         this.game = game;
