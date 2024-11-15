@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Snapshot: Added constants for Z-index and moved some things around">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/DownloadingGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Human.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Looker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Obstacle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/TurnState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Vector2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Vision.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/VisionCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/map.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/MainDownloadingGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/keyboard/StandardKeyboardHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/keyboard/StandardKeyboardHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/actor/ascii/actormap/StandardAsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actor/ascii/actormap/StandardAsciiActorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +52,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -62,8 +77,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.MainDownloadingGame.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
@@ -91,7 +108,7 @@
       <recent name="actor" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainDownloadingGame">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="ascii-game-engine.main" />
@@ -105,8 +122,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainDownloadingGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.MainDownloadingGame" />
+      <module name="ascii-game-engine.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainDownloadingGame" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -114,7 +145,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -128,6 +160,10 @@
       <updated>1731249503855</updated>
       <workItem from="1731249507017" duration="7404000" />
       <workItem from="1731312437716" duration="1163000" />
+      <workItem from="1731602805707" duration="282000" />
+      <workItem from="1731687428648" duration="6568000" />
+      <workItem from="1731694658949" duration="23000" />
+      <workItem from="1731694965235" duration="17046000" />
     </task>
     <task id="LOCAL-00001" summary="Snapshot: IntelliJ reload and implementation for getting raw keyboard inputs">
       <option name="closed" value="true" />
@@ -218,5 +254,20 @@
     <MESSAGE value="Snapshot: SymbolTextActors can now have z-indexes" />
     <MESSAGE value="Snapshot: Added constants for Z-index and moved some things around" />
     <option name="LAST_COMMIT_MESSAGE" value="Snapshot: Added constants for Z-index and moved some things around" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Camera.java</url>
+          <line>79</line>
+          <properties class="game.ascii.downloadinggame.Camera" method="tryTurn">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

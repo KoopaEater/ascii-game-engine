@@ -57,13 +57,15 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         game.setColorOfSymbol(color, x, y);
     }
     private void updateBackground(AsciiActor actor) {
-        boolean opaque = actor.hasBackground();
-        if (!opaque) {
-            return;
-        }
+        // TODO: Fix this
         int x = actor.getX();
         int y = actor.getY();
         if (!isValidSpot(x, y)) return;
+        boolean opaque = actor.hasBackground();
+        if (!opaque) {
+            game.setBackgroundOpaqueOfSymbol(false, x, y);
+            return;
+        }
         Color color = actor.getBackground();
         game.setBackgroundOfSymbol(color, x, y);
         game.setBackgroundOpaqueOfSymbol(true, x, y);
@@ -119,11 +121,6 @@ public class StandardAsciiActorMap implements AsciiActorMap, AsciiActorObserver 
         int y = actor.getY();
 
         AsciiActor top = getVisibleTop(x, y);
-
-        if (top != actor) { // There's no need to update anything
-            return;
-        }
-
         update(top);
 
     }

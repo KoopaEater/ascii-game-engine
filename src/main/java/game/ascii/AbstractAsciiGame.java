@@ -104,6 +104,10 @@ public abstract class AbstractAsciiGame implements AsciiGame {
         return actor;
     }
     @Override
+    public void removeActor(MutableAsciiActor actor) {
+        actorMap.removeActor(actor);
+    }
+    @Override
     public MutableTextAsciiActor createSymbolTextActor(int length) {
         SymbolTextAsciiActor actor = new SymbolTextAsciiActor(length);
         actor.addObserver(actorMap);

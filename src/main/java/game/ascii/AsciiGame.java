@@ -20,4 +20,5 @@ public interface AsciiGame extends Game {
     int getYSymbols();
     MutableAsciiActor createSymbolActor();
     MutableTextAsciiActor createSymbolTextActor(int length);
+    void removeActor(MutableAsciiActor actor);
 }
