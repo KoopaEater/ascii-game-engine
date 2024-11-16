@@ -12,20 +12,23 @@ import java.util.List;
 
 public class DownloadingGame extends AbstractAsciiGame {
 
+    private static final int MIN_MOVE_DELAY = 2;
+    private static final int MAX_MOVE_DELAY = 5;
+
     private int moveDelay;
     private int timeSinceLastMove;
     private List<MutableAsciiActor> everythingExceptPlayer;
     private List<Obstacle> obstacles;
     private List<Vision> visions;
 
-
     private Player player;
     private Human human;
     private Looker looker;
     private Camera camera;
+    private BreathingMeter breathingMeter;
 
     public DownloadingGame() {
-        super("Downloading...", 25, 25, 10);
+        super("Downloading...", Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, 10);
     }
 
     @Override
@@ -53,6 +56,8 @@ public class DownloadingGame extends AbstractAsciiGame {
         looker = new Looker(this, 10, 22, new Vector2D(1, 1), 20);
 
         camera = new Camera(this, '▼', 30, 10, new Vector2D(0,1), 2, 20, 90);
+
+        breathingMeter = new BreathingMeter(this);
 
         generateWalls();
 
@@ -141,6 +146,10 @@ public class DownloadingGame extends AbstractAsciiGame {
         everythingExceptPlayer.remove(vision.getActor());
     }
 
+    public void adjustMoveDelayFromBreathRate(int breathRate) {
+        moveDelay = MIN_MOVE_DELAY + (MAX_MOVE_DELAY - MIN_MOVE_DELAY) * (BreathingMeter.MAX_BREATH_RATE - breathRate) / (BreathingMeter.MAX_BREATH_RATE - BreathingMeter.MIN_BREATH_RATE);
+    }
+
     @Override
     public void tick(long deltaTime) {
 
@@ -152,21 +161,21 @@ public class DownloadingGame extends AbstractAsciiGame {
         human.tryStep();
         looker.tryLook();
         camera.tryTurn();
+        breathingMeter.tryTick();
     }
 
     @Override
     public void onKeyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            human.setDirection(new Vector2D(1, 0));
-        }
-        if (e.getKeyCode() == KeyEvent.VK_D) {
-            human.move(1, 0);
+            breathingMeter.breathIn();
         }
     }
 
     @Override
     public void onKeyReleased(KeyEvent e) {
-
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            breathingMeter.breathOut();
+        }
     }
 
     @Override

@@ -4,26 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="Snapshot: Added constants for Z-index and moved some things around">
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/DownloadingGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Looker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Obstacle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/TurnState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Vector2D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Vision.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/VisionCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Wall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/map.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/MainDownloadingGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="KJAM - Snapshot: Three enemy types are ready">
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/BreathState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/BreathingMeter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/breathing.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/breathe-in.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/breathe-out.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/actor/ascii/actormap/StandardAsciiActorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/actor/ascii/actormap/StandardAsciiActorMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AbstractAsciiGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/AsciiGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/DownloadingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/DownloadingGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +48,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;KoopaEater&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/KoopaEater/ascii-game-engine.git&quot;,
+    &quot;accountId&quot;: &quot;902b2292-b029-4c17-9dcf-eec40b263b0d&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -86,7 +87,7 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Programmering/JavaProjects/ascii-game-engine/src/main/resources/fonts",
+    "last_opened_file_path": "C:/Users/maxka/Projects/ascii-game-engine/src/main/resources/sounds",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,7 +102,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="game.ascii.downloadinggame" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maxka\Projects\ascii-game-engine\src\main\resources\sounds" />
       <recent name="E:\Programmering\JavaProjects\ascii-game-engine\src\main\resources\fonts" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -163,7 +168,8 @@
       <workItem from="1731602805707" duration="282000" />
       <workItem from="1731687428648" duration="6568000" />
       <workItem from="1731694658949" duration="23000" />
-      <workItem from="1731694965235" duration="17046000" />
+      <workItem from="1731694965235" duration="17111000" />
+      <workItem from="1731754334003" duration="10601000" />
     </task>
     <task id="LOCAL-00001" summary="Snapshot: IntelliJ reload and implementation for getting raw keyboard inputs">
       <option name="closed" value="true" />
@@ -237,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731271592050</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="KJAM - Snapshot: Three enemy types are ready">
+      <option name="closed" value="true" />
+      <created>1731712193678</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731712193678</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,21 +267,7 @@
     <MESSAGE value="Snapshot: SymbolActors can now have z-indexes" />
     <MESSAGE value="Snapshot: SymbolTextActors can now have z-indexes" />
     <MESSAGE value="Snapshot: Added constants for Z-index and moved some things around" />
-    <option name="LAST_COMMIT_MESSAGE" value="Snapshot: Added constants for Z-index and moved some things around" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Camera.java</url>
-          <line>79</line>
-          <properties class="game.ascii.downloadinggame.Camera" method="tryTurn">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="KJAM - Snapshot: Three enemy types are ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="KJAM - Snapshot: Three enemy types are ready" />
   </component>
 </project>
