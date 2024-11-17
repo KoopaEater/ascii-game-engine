@@ -7,7 +7,6 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.awt.*;
-import java.io.File;
 import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,7 +16,7 @@ public class BreathingMeter {
 
     private static final int SIZE = 11;
     public static final int MAX_BREATH_RATE = 16;
-    public static final int MIN_BREATH_RATE = 10;
+    public static final int MIN_BREATH_RATE = 8;
     private static final int PENALTY_THRESHOLD = 3;
     private static final int BONUS_THRESHOLD = 1;
 

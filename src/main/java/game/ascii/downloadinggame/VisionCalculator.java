@@ -1,11 +1,12 @@
 package game.ascii.downloadinggame;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class VisionCalculator {
 
-    public static List<Vision> calculateConeCells(Vector2D apex, Vector2D direction, double angle, double length, DownloadingGame game) {
+    public static List<Vision> calculateConeCells(Vector2D apex, Vector2D direction, double angle, double length, DownloadingGame game, Color color) {
         List<Vector2D> coneCells = new ArrayList<>();
         double halfAngle = Math.toRadians(angle / 2);
 
@@ -18,7 +19,7 @@ public class VisionCalculator {
                 }
             }
         }
-        return convertFromVectorToVision(coneCells, game);
+        return convertFromVectorToVision(coneCells, game, color);
     }
 
     private static boolean isWithinCone(Vector2D apex, Vector2D direction, Vector2D cell, double halfAngle, double length) {
@@ -40,10 +41,10 @@ public class VisionCalculator {
         return angleDifference <= halfAngle;
     }
 
-    private static List<Vision> convertFromVectorToVision(List<Vector2D> vectors, DownloadingGame game) {
+    private static List<Vision> convertFromVectorToVision(List<Vector2D> vectors, DownloadingGame game, Color color) {
         List<Vision> visions = new ArrayList<>(vectors.size());
         for (Vector2D vector : vectors) {
-            Vision vision = new Vision(game, (int)vector.x, (int)vector.y);
+            Vision vision = new Vision(game, (int)vector.x, (int)vector.y, color);
             visions.add(vision);
         }
         return visions;

@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="KJAM - Snapshot: Three enemy types are ready">
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/BreathState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/BreathingMeter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/breathing.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/breathe-in.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sounds/breathe-out.wav" afterDir="false" />
+    <list default="true" id="19e30616-0823-4c66-8f5d-1cd6419f20f9" name="Changes" comment="KJAM - Snapshot: BreathMeter works">
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Goal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/BreathingMeter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/BreathingMeter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/DownloadingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/DownloadingGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Looker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Looker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Vision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Vision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/VisionCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/VisionCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Wall.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +43,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -169,7 +172,10 @@
       <workItem from="1731687428648" duration="6568000" />
       <workItem from="1731694658949" duration="23000" />
       <workItem from="1731694965235" duration="17111000" />
-      <workItem from="1731754334003" duration="10601000" />
+      <workItem from="1731754334003" duration="10626000" />
+      <workItem from="1731773707599" duration="252000" />
+      <workItem from="1731774397047" duration="512000" />
+      <workItem from="1731828634935" duration="8147000" />
     </task>
     <task id="LOCAL-00001" summary="Snapshot: IntelliJ reload and implementation for getting raw keyboard inputs">
       <option name="closed" value="true" />
@@ -251,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731712193678</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="KJAM - Snapshot: BreathMeter works">
+      <option name="closed" value="true" />
+      <created>1731765048952</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731765048952</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +282,22 @@
     <MESSAGE value="Snapshot: SymbolTextActors can now have z-indexes" />
     <MESSAGE value="Snapshot: Added constants for Z-index and moved some things around" />
     <MESSAGE value="KJAM - Snapshot: Three enemy types are ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="KJAM - Snapshot: Three enemy types are ready" />
+    <MESSAGE value="KJAM - Snapshot: BreathMeter works" />
+    <option name="LAST_COMMIT_MESSAGE" value="KJAM - Snapshot: BreathMeter works" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/game/ascii/downloadinggame/Human.java</url>
+          <line>48</line>
+          <properties class="game.ascii.downloadinggame.Human" method="step">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

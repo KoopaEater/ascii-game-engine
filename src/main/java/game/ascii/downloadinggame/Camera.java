@@ -18,10 +18,11 @@ public class Camera implements Obstacle{
     private int minTurnAngle, maxTurnAngle, currentTurnAngle;
     private int normalTurnVelocity, currentTurnVelocity;
     private TurnState turnState;
+    private int coneWidth, coneSize;
 
     private List<Vision> visions;
 
-    public Camera(DownloadingGame game, char symbol, int x, int y, Vector2D direction, int turnDelay, int waitDelay, int turnAngle) {
+    public Camera(DownloadingGame game, char symbol, int x, int y, Vector2D direction, int turnDelay, int waitDelay, int turnAngle, int coneWidth, int coneSize) {
         this.game = game;
         pos = new Vector2D(x, y);
         this.direction = direction;
@@ -34,6 +35,8 @@ public class Camera implements Obstacle{
         normalTurnVelocity = 5;
         currentTurnVelocity = normalTurnVelocity;
         turnState = TurnState.TURNING;
+        this.coneWidth = coneWidth;
+        this.coneSize = coneSize;
 
         visions = new ArrayList<>();
 
@@ -46,6 +49,7 @@ public class Camera implements Obstacle{
         camera.show();
 
         game.addToObstaclesAndEverything(this);
+        game.addToCameras(this);
         generateCone();
 
     }
@@ -60,7 +64,7 @@ public class Camera implements Obstacle{
             game.removeFromVisionAndEverything(vision);
             game.removeActor(actor);
         }
-        visions = VisionCalculator.calculateConeCells(pos, angleVector, 45, 12, game);
+        visions = VisionCalculator.calculateConeCells(pos, angleVector, coneWidth, coneSize, game, Color.YELLOW);
     }
 
     private void turn() {

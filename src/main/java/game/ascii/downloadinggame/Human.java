@@ -15,15 +15,17 @@ public class Human implements Obstacle {
     private Vector2D direction;
     private int moveDelay;
     private int moveCounter;
+    private int coneSize;
 
     private List<Vector2D> path, dirs;
     private int pathIndex;
 
-    public Human(DownloadingGame game, int x, int y, int moveDelay) {
+    public Human(DownloadingGame game, int x, int y, int moveDelay, int coneSize) {
         this.game = game;
         pos = new Vector2D(x, y);
         this.moveDelay = moveDelay;
         moveCounter = 0;
+        this.coneSize = coneSize;
 
         visions = new ArrayList<>();
         path = new ArrayList<>();
@@ -39,6 +41,7 @@ public class Human implements Obstacle {
         human.show();
 
         game.addToObstaclesAndEverything(this);
+        game.addToHumans(this);
         setDirection(new Vector2D(0, 1));
 
     }
@@ -78,7 +81,7 @@ public class Human implements Obstacle {
             game.removeFromVisionAndEverything(vision);
             game.removeActor(actor);
         }
-        visions = VisionCalculator.calculateConeCells(pos, direction, 60, 12, game);
+        visions = VisionCalculator.calculateConeCells(pos, direction, 60, coneSize, game, Color.ORANGE);
     }
 
     public void move(int dx, int dy) {

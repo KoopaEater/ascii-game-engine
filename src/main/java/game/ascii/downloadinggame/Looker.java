@@ -18,12 +18,14 @@ public class Looker implements Obstacle{
     private int lookDelay;
     private int lookCounter;
     private boolean looking;
+    private int coneSize;
 
-    public Looker(DownloadingGame game, int x, int y, Vector2D direction, int lookDelay) {
+    public Looker(DownloadingGame game, int x, int y, Vector2D direction, int lookDelay, int coneSize) {
         this.game = game;
         pos = new Vector2D(x, y);
         this.lookDelay = lookDelay;
         looking = true;
+        this.coneSize = coneSize;
 
         visions = new ArrayList<>();
 
@@ -36,13 +38,14 @@ public class Looker implements Obstacle{
         looker.show();
 
         game.addToObstaclesAndEverything(this);
-        setCone(direction, 8);
+        game.addToLookers(this);
+        setCone(direction, coneSize);
     }
 
     private void toggleLook() {
         looking = !looking;
         if (looking) {
-            setCone(direction, 8);
+            setCone(direction, coneSize);
             game.checkPlayerInVision();
         } else {
             setCone(direction, 0);
@@ -65,7 +68,7 @@ public class Looker implements Obstacle{
             game.removeFromVisionAndEverything(vision);
             game.removeActor(actor);
         }
-        visions = VisionCalculator.calculateConeCells(pos, direction, 60, coneSize, game);
+        visions = VisionCalculator.calculateConeCells(pos, direction, 60, coneSize, game, Color.CYAN);
     }
 
     @Override
